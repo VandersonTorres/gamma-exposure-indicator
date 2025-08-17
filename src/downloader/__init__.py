@@ -12,9 +12,7 @@ class BaseDownloader:
         self.logger.setLevel(logging.DEBUG)
         if not self.logger.handlers:
             handler = logging.StreamHandler()
-            formatter = logging.Formatter(
-                "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-            )
+            formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
             handler.setFormatter(formatter)
             self.logger.addHandler(handler)
 
@@ -52,6 +50,7 @@ class BaseDownloader:
         Returns:
             object: Playwright context.
         """
+
         class PageContext:
             def __enter__(inner_self):
                 self._pw = sync_playwright().start()

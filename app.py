@@ -13,10 +13,7 @@ def _args() -> dict:
     parser.add_argument(
         "--urls",
         type=str,
-        help=(
-            "Papers URLs to crawl. Comma separated (url1,url2,url3)."
-            "The default are the ETF and SPOT urls."
-        ),
+        help=("Papers URLs to crawl. Comma separated (url1,url2,url3)." "The default are the ETF and SPOT urls."),
     )
     parser.add_argument(
         "--expiration_type",
@@ -27,12 +24,9 @@ def _args() -> dict:
         ),
     )
     parser.add_argument(
-        '--expiration_month',
+        "--expiration_month",
         type=str,
-        help=(
-            "Month of expiration. Supported values: 'all' (Default), "
-            "'agosto', 'setembro' (in portuguese)"
-        ),
+        help=("Month of expiration. Supported values: 'all' (Default), " "'agosto', 'setembro' (in portuguese)"),
     )
     args = parser.parse_args()
     urls = args.urls.split(",") if args.urls else CBOE_DEFAULT_URLS

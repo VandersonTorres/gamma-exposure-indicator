@@ -90,12 +90,8 @@ class CBOEDownloader(BaseDownloader):
             download = download_info.value
             expiration_type = "0dte" if expiration_type.lower() == "standard" else expiration_type
             filename = f"{download.suggested_filename.replace('.csv', '')}_{expiration_type}"
-            filename = (
-                f"{filename}_{expiration_month}.csv"
-                if expiration_month.lower() != "all"
-                else f"{filename}.csv"
-            )
-            file_path = os.path.join(DOWNLOADS_DIR, f"{filename}_{datetime.now().strftime("%d-%m-%y")}")
+            filename = f"{filename}_{expiration_month}" if expiration_month.lower() != "all" else filename
+            file_path = os.path.join(DOWNLOADS_DIR, f"{filename}_{datetime.now().strftime('%d-%m-%y')}.csv")
             download.save_as(os.path.join(DOWNLOADS_DIR, file_path))
             self.logger.info(f"CSV successfully stored at {file_path}")
             return file_path
