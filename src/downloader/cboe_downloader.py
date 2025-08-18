@@ -19,12 +19,12 @@ class CBOEDownloader(BaseDownloader):
         """
         # Expand the dropdown
         _dropdown = page.locator(dropdown_selector)
-        _dropdown.wait_for(state="visible", timeout=5000)
+        _dropdown.wait_for(state="visible", timeout=7000)
         _dropdown.click()
 
         # Select the option
-        option_locator = page.locator(option_selector)
-        option_locator.wait_for(state="visible", timeout=5000)
+        option_locator = page.locator(option_selector).first
+        option_locator.wait_for(state="visible", timeout=7000)
         option_locator.click()
 
     def setup_expiration(self, page: Page, _type: str, _month: str) -> None:
@@ -35,7 +35,11 @@ class CBOEDownloader(BaseDownloader):
             _type (str): Type of expiration.
             _month (str): Expiration month for current year (portuguese).
         """
-        # Sets expiration type
+        if _type.lower() != "standard":
+            # Type "standard" == 0DTE
+            _month = "all"
+
+        # Sets Expiration Type
         self.select_options_from_dropdown(
             page=page,
             dropdown_selector=(
@@ -46,18 +50,27 @@ class CBOEDownloader(BaseDownloader):
         self.logger.info(f"Expiration type '{_type}' successfully selected.")
         self._sleep_between_actions()
 
-        if _type.lower() != "standard":
-            # Type "standard" == 0DTE
-            # Sets expiration month
-            self.select_options_from_dropdown(
-                page=page,
-                dropdown_selector=(
-                    "//div[contains(text(), 'Expiration:')]/following::div[contains(@class, 'Box-cui__')][1]"
-                ),
-                option_selector=f"div.ReactSelect__option:has-text('{_month}')",
-            )
-            self.logger.info(f"Expiration month '{_month}' successfully selected.")
-            self._sleep_between_actions()
+        # Sets expiration Month
+        self.select_options_from_dropdown(
+            page=page,
+            dropdown_selector=(
+                "//div[contains(text(), 'Expiration:')]/following::div[contains(@class, 'Box-cui__')][1]"
+            ),
+            option_selector=f"div.ReactSelect__option:has-text('{_month}')",
+        )
+        self.logger.info(f"Expiration month '{_month}' successfully selected.")
+        self._sleep_between_actions()
+
+        # Sets Options Range
+        self.select_options_from_dropdown(
+            page=page,
+            dropdown_selector=(
+                "//div[contains(text(), 'Options Range:')]/following::div[contains(@class, 'Box-cui__')][1]"
+            ),
+            option_selector="div.ReactSelect__option:has-text('all')",
+        )
+        self.logger.info(f"Expiration type '{_type}' successfully selected.")
+        self._sleep_between_actions()
 
         set_params = page.locator("//button[contains(., 'View Chain')]")
         set_params.click()
