@@ -87,7 +87,7 @@ $ python app.py --expiration_type standard
 
 3. **Download all options for SPX and SPY expiring at august:**
 ```bash
-$ python app.py --expiration_type standard --expiration_month agosto
+$ python app.py --expiration_type all --expiration_month agosto
 ```
 
 - **Output**:
