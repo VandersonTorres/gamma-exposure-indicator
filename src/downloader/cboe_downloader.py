@@ -97,7 +97,7 @@ class CBOEDownloader(BaseDownloader):
             self.setup_expiration(page=page, _type=expiration_type, _month=expiration_month)
             with page.expect_download() as download_info:
                 csv_link = page.locator("//a[contains(., 'Download CSV')]")
-                csv_link.wait_for(state="visible", timeout=3000)
+                csv_link.wait_for(state="visible", timeout=5000)
                 csv_link.click()
 
             download = download_info.value
