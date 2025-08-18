@@ -16,9 +16,13 @@
 ## Installation
 
 1. Clone the repository:
-
+- SSH
 ```bash
 $ git clone git@github.com:VandersonTorres/gamma-exposure-indicator.git
+```
+- HTTPS
+```bash
+$ git clone https://github.com/VandersonTorres/gamma-exposure-indicator.git
 ```
 
 2. (Optional) Create a virtual environment:
