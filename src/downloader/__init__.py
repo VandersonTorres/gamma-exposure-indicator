@@ -6,15 +6,10 @@ from playwright.sync_api._generated import Page
 
 
 class BaseDownloader:
+
     def __init__(self) -> None:
         # Set logger
         self.logger = logging.getLogger(self.__class__.__name__)
-        self.logger.setLevel(logging.DEBUG)
-        if not self.logger.handlers:
-            handler = logging.StreamHandler()
-            formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-            handler.setFormatter(formatter)
-            self.logger.addHandler(handler)
 
     def _sleep_between_actions(self, seconds: int = 2) -> None:
         """
@@ -36,9 +31,9 @@ class BaseDownloader:
         try:
             page.locator(resolve_cookies_selector)
             page.click(resolve_cookies_selector)
-            self.logger.info("Cookies resolved.")
+            self.logger.info(f"Cookies resolved for {page.url}.")
         except TimeoutError:
-            self.logger.warning("No cookies found. Continuing...")
+            self.logger.warning(f"No cookies found for {page.url}. Continuing...")
 
         self._sleep_between_actions()
 
@@ -57,7 +52,7 @@ class BaseDownloader:
                 self._browser = self._pw.chromium.launch(headless=False)
                 self._context = self._browser.new_context()
                 self._page = self._context.new_page()
-                self._page.goto(url, wait_until="networkidle")
+                self._page.goto(url, wait_until="load")
                 return self._page
 
             def __exit__(inner_self, exc_type, exc_val, exc_tb):

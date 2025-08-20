@@ -3,7 +3,7 @@ from datetime import datetime
 
 from playwright.sync_api._generated import Page
 
-from src.settings import DOWNLOADS_DIR
+from src.settings import RAW_DIR
 from . import BaseDownloader
 
 
@@ -19,12 +19,12 @@ class CBOEDownloader(BaseDownloader):
         """
         # Expand the dropdown
         _dropdown = page.locator(dropdown_selector)
-        _dropdown.wait_for(state="visible", timeout=7000)
+        _dropdown.wait_for(state="visible", timeout=5000)
         _dropdown.click()
 
         # Select the option
         option_locator = page.locator(option_selector).first
-        option_locator.wait_for(state="visible", timeout=7000)
+        option_locator.wait_for(state="visible", timeout=5000)
         option_locator.click()
 
     def setup_expiration(self, page: Page, _type: str, _month: str) -> None:
@@ -69,7 +69,7 @@ class CBOEDownloader(BaseDownloader):
             ),
             option_selector="div.ReactSelect__option:has-text('all')",
         )
-        self.logger.info(f"Expiration type '{_type}' successfully selected.")
+        self.logger.info("Options Range 'all' successfully selected.")
         self._sleep_between_actions()
 
         set_params = page.locator("//button[contains(., 'View Chain')]")
@@ -96,15 +96,17 @@ class CBOEDownloader(BaseDownloader):
             self.resolve_cookies_popup(page=page, resolve_cookies_selector="#onetrust-accept-btn-handler")
             self.setup_expiration(page=page, _type=expiration_type, _month=expiration_month)
             with page.expect_download() as download_info:
+                page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
                 csv_link = page.locator("//a[contains(., 'Download CSV')]")
-                csv_link.wait_for(state="visible", timeout=5000)
+                csv_link.wait_for(state="visible", timeout=3000)
                 csv_link.click()
 
             download = download_info.value
             expiration_type = "0dte" if expiration_type.lower() == "standard" else expiration_type
-            filename = f"{download.suggested_filename.replace('.csv', '')}_{expiration_type}"
+            name, _ = os.path.splitext(download.suggested_filename)
+            filename = f"{name}_{expiration_type}"
             filename = f"{filename}_{expiration_month}" if expiration_month.lower() != "all" else filename
-            file_path = os.path.join(DOWNLOADS_DIR, f"{filename}_{datetime.now().strftime('%d-%m-%y')}.csv")
-            download.save_as(os.path.join(DOWNLOADS_DIR, file_path))
+            file_path = os.path.join(RAW_DIR, f"cboe_{filename}_{datetime.now().strftime('%d-%m-%y')}.csv")
+            download.save_as(file_path)
             self.logger.info(f"CSV successfully stored at {file_path}")
             return file_path

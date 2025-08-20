@@ -1,6 +1,7 @@
 import argparse
 
 from src.downloader.cboe_downloader import CBOEDownloader
+from src.parsers.cboe_parser import parse_cboe_csv
 
 CBOE_DEFAULT_URLS = [
     "https://www.cboe.com/delayed_quotes/spy/quote_table",  # ETF
@@ -53,3 +54,7 @@ if __name__ == "__main__":
             expiration_month=expiration_month,
         )
         files_to_check.append(options_csv_file_path)
+
+    for file_path in files_to_check:
+        if "cboe" in file_path:
+            parse_cboe_csv(file_path)
