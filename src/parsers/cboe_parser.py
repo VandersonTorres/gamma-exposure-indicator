@@ -37,7 +37,7 @@ def calculate_leads(df: pd.DataFrame, last_price: str) -> dict:
     for _, row in df.iterrows():
         call_gamma_value = row["Gamma"]
         call_open_interest = row["Open Interest"]
-        put_open_interest = row["Open Interest"]
+        put_open_interest = row["Open Interest.1"]
         put_gamma_value = row["Gamma.1"]
         strike = str(row["Strike"])
         call_result = (call_gamma_value * call_open_interest) * 100
