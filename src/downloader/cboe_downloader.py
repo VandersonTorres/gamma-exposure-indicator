@@ -76,7 +76,9 @@ class CBOEDownloader(BaseDownloader):
         set_params.click()
         self._sleep_between_actions()
 
-    def get_csv(self, url: str, expiration_type: str, expiration_month: str) -> str:
+    def get_csv_and_last_price(
+        self, url: str, expiration_type: str, expiration_month: str, headless: bool = True
+    ) -> tuple[str]:
         """
         Download a CSV file from CBOE web page.
         Args:
@@ -89,11 +91,17 @@ class CBOEDownloader(BaseDownloader):
                 - "monthly"
             expiration_month (str): Expiration month for current year (portuguese). Ex:
                 "agosto"
+            headless (bool): Do not show the browser.
         Returns:
             File Path (str)
         """
-        with self.start_navigation(url=url) as page:
+        with self.start_navigation(url=url, headless=headless) as page:
             self.resolve_cookies_popup(page=page, resolve_cookies_selector="#onetrust-accept-btn-handler")
+            self._sleep_between_actions(seconds=3)
+            last_price = page.query_selector(
+                "//div[contains(., 'Last:')]/div[contains(@class, 'Box-cui_') and contains(@class, 'Text-cui__')]"
+            ).text_content()
+
             self.setup_expiration(page=page, _type=expiration_type, _month=expiration_month)
             with page.expect_download() as download_info:
                 page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
@@ -109,4 +117,4 @@ class CBOEDownloader(BaseDownloader):
             file_path = os.path.join(RAW_DIR, f"cboe_{filename}_{datetime.now().strftime('%d-%m-%y')}.csv")
             download.save_as(file_path)
             self.logger.info(f"CSV successfully stored at {file_path}")
-            return file_path
+            return file_path, last_price

@@ -1,7 +1,9 @@
 import argparse
 
+from src.analytics.gamma_exposure import calculate_gex_per_strikes
 from src.downloader.cboe_downloader import CBOEDownloader
 from src.parsers.cboe_parser import parse_cboe_csv
+from src.vizualization.gex_charts import plot_gex
 
 CBOE_DEFAULT_URLS = [
     "https://www.cboe.com/delayed_quotes/spy/quote_table",  # ETF
@@ -46,15 +48,28 @@ if __name__ == "__main__":
     urls = args.get("urls")
     expiration_type = args.get("expiration_type")
     expiration_month = args.get("expiration_month")
-    files_to_check = []
+
+    raw_csv_files_to_check = []
     for url in urls:
-        options_csv_file_path = cboe_downloader.get_csv(
+        options_csv_file_path, last_price = cboe_downloader.get_csv_and_last_price(
             url=url,
             expiration_type=expiration_type,
             expiration_month=expiration_month,
+            # headless=False  # Uncomment to show browser
         )
-        files_to_check.append(options_csv_file_path)
+        raw_csv_files_to_check.append((options_csv_file_path, last_price))
 
-    for file_path in files_to_check:
-        if "cboe" in file_path:
-            parse_cboe_csv(file_path)
+    processed_files = [
+        # "data/processed/processed_cboe_spx_quotedata_all_20-08-25.json",
+        # "data/processed/processed_cboe_spy_quotedata_all_20-08-25.json",
+    ]
+    for file_path, last_price in raw_csv_files_to_check:
+        processed_file = parse_cboe_csv(file_path=file_path, last_price=last_price)
+        processed_files.append(processed_file)
+
+    total_gex_per_asset = {}
+    for processed_file in processed_files:
+        calculated_gex = calculate_gex_per_strikes(processed_file_path=processed_file)
+        total_gex_per_asset.update(calculated_gex)
+
+    plot_gex(total_gex_per_asset)

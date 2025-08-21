@@ -37,11 +37,12 @@ class BaseDownloader:
 
         self._sleep_between_actions()
 
-    def start_navigation(self, url: str) -> object:
+    def start_navigation(self, url: str, headless: bool = True) -> object:
         """
         Context manager to start a Playwright Page.
         Args:
             url (str): URL to be started.
+            headless (bool): Do not show the browser.
         Returns:
             object: Playwright context.
         """
@@ -49,7 +50,7 @@ class BaseDownloader:
         class PageContext:
             def __enter__(inner_self):
                 self._pw = sync_playwright().start()
-                self._browser = self._pw.chromium.launch(headless=False)
+                self._browser = self._pw.chromium.launch(headless=headless)
                 self._context = self._browser.new_context()
                 self._page = self._context.new_page()
                 self._page.goto(url, wait_until="load")

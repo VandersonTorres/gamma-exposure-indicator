@@ -106,3 +106,64 @@ The downloader is built with Playwright (sync API). Ensure browsers are installe
 The tool handles cookie popups automatically.
 
 Designed to be modular, so adding CME downloads or analytics features is straightforward.
+
+---
+
+# ESTUDO
+
+## CENÁRIOS MARKET MAKERS
+
+### Compressão de Volatilidade
+*(Market Maker está comprado em opções, tende a estabilizar o mercado.)*
+
+1. Compra de Calls:
+
+    D + | G +
+
+    - Se o mercado sobe  ->  Venda do Ativo
+    - Se o mercado cai   ->  Compra do Ativo
+    (compra fundo | vende topo)
+
+    Explicação:
+    - Se o preço sobe, o DELTA (+) aumenta, então ele zera o delta vendendo o ativo.
+    - Se o preço cai, o DELTA (+) diminui, e ele zera comprando o ativo.
+
+2. Compra de Puts:
+
+    D - | G +
+
+    - Se o mercado sobe  ->  Venda do Ativo
+    - Se o mercado cai   ->  Compra do Ativo
+    (compra fundo | vende topo)
+
+    Explicação:
+    - Se o preço sobe, o DELTA (-) diminui (fica menos negativo), então ele zera vendendo o ativo
+    - Se o preço cai, o DELTA (-) aumenta (fica mais negativo), então ele zera comprando o ativo
+
+### Expansão de Volatilidade
+*(Market Maker está vendido em opções, tende a amplificar o movimento do mercado.)*
+
+1. Venda de Calls:
+
+    D + | G -
+
+    - Se o mercado sobe ->  Compra do Ativo
+    - Se o mercado cai  ->  Venda do Ativo
+    (compra topo | vende fundo)
+
+    Explicação:
+    - Se o preço sobe, o DELTA (+) aumenta, mas como o MM está vendido em calls, seu risco aumenta, então ele precisa comprar o ativo para cobrir.
+    - Se o preço cai, o DELTA (+) diminui, então MM precisa vender o ativo.
+
+2. Venda de Puts
+
+    D - | G -
+
+    - Se o mercado sobe ->   Compra do Ativo
+    - Se o mercado cai  ->   Venda do Ativo
+    (compra topo | vende fundo)
+
+    Explicação:
+
+    - Se o preço sobe, o DELTA (-) diminui (fica menos negativo), então ele precisa comprar o ativo.
+    - Se o preço cai, o DELTA (-) aumenta (fica mais negativo), então ele precisa vender ativo.

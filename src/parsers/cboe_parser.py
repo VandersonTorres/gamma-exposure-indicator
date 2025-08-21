@@ -20,11 +20,12 @@ def load_cboe_csv(file_path: str) -> pd.DataFrame:
     return df.rename(columns=lambda x: x.strip())
 
 
-def calculate_gamma_exposure(df: pd.DataFrame) -> dict:
+def calculate_leads(df: pd.DataFrame, last_price: str) -> dict:
     """
-    Calculate Gamma Exposure (GEX) for each strike.
+    Calculate the leads for each strike.
     Args:
         df (pd.DataFrame): A dataframe to be processed.
+        last_price (str): Last price of the asset.
     Returns:
         dict:
     {
@@ -34,9 +35,13 @@ def calculate_gamma_exposure(df: pd.DataFrame) -> dict:
     """
     processed_strikes = {}
     for _, row in df.iterrows():
+        call_gamma_value = row["Gamma"]
+        call_open_interest = row["Open Interest"]
+        put_open_interest = row["Open Interest"]
+        put_gamma_value = row["Gamma.1"]
         strike = str(row["Strike"])
-        call_result = (row["Gamma"] * row["Open Interest"]) * 100
-        put_result = (row["Gamma.1"] * row["Open Interest.1"]) * -100
+        call_result = (call_gamma_value * call_open_interest) * 100
+        put_result = (put_gamma_value * put_open_interest) * -100
         gamma_exposure = call_result + put_result
 
         if strike not in processed_strikes:
@@ -47,9 +52,14 @@ def calculate_gamma_exposure(df: pd.DataFrame) -> dict:
                 "expiration_date": row["Expiration Date"],
                 "gex_at_call": call_result,
                 "gex_at_put": put_result,
+                "call_open_interest": call_open_interest,
+                "put_open_interest": put_open_interest,
                 "gamma_exposure_result": gamma_exposure,
+                "call_gamma_value": call_gamma_value,
+                "put_gamma_value": put_gamma_value,
             }
         )
+    processed_strikes["last_price"] = last_price
     return processed_strikes
 
 
@@ -67,19 +77,20 @@ def save_processed_strikes(processed_strikes: dict, raw_file_path: str) -> str:
     with open(output_path, "w") as f:
         json.dump(processed_strikes, f, indent=2)
 
-    logger.info(f"Processed data stored at {output_path}")
+    logger.info(f"Serialized data stored at {output_path}")
     return output_path
 
 
-def parse_cboe_csv(file_path: str) -> str:
+def parse_cboe_csv(file_path: str, last_price: str) -> str:
     """
     Manage processing of Raw CSV File from CBOE.
     Args:
         file_path (str): Path to the CSV file from CBOE.
+        last_price (str): Last price of the asset.
     Returns:
         str: Processed file path.
     """
     df = load_cboe_csv(file_path)
-    logger.info(f"Calculating Gamma Exposure for '{len(df)}' Strikes at '{file_path}'...")
-    processed_strikes = calculate_gamma_exposure(df)
+    logger.info(f"Calculating the leads for '{len(df)}' Strikes at '{file_path}'...")
+    processed_strikes = calculate_leads(df, last_price)
     return save_processed_strikes(processed_strikes, file_path)
