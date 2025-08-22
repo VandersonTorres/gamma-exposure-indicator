@@ -53,6 +53,7 @@ class BaseDownloader:
                 self._browser = self._pw.chromium.launch(headless=headless)
                 self._context = self._browser.new_context()
                 self._page = self._context.new_page()
+                self.logger.info(f"Navigating to {url}...")
                 self._page.goto(url, wait_until="load")
                 return self._page
 

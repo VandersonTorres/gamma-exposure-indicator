@@ -22,23 +22,36 @@ def _args() -> dict:
         "--expiration_type",
         type=str,
         help=(
-            "Type of the expiration. Supported values: 'all' (Default), "
-            "'standard' (0DTE), 'weekly', 'quarterly', 'monthly'"
+            "Type of the expiration. Supported values: 'all' (Default), 'standard', 'weekly', 'quarterly', 'monthly'"
         ),
     )
     parser.add_argument(
         "--expiration_month",
         type=str,
-        help="Month of expiration. Supported values: 'all' (Default), 'agosto', 'setembro' (in portuguese)",
+        help="Month of expiration. Supported values: 'all' (Default), 'agosto', 'setembro' (in portuguese).",
+    )
+    parser.add_argument(
+        "--split_visualization",
+        type=bool,
+        help="See the GEX results isolated (calls and puts separated). Ommit to see total GEX.",
+    )
+    parser.add_argument(
+        "--zero_days",
+        type=bool,
+        help="Consider only Zero Days To Expiration options (0DTE). Ommit to calculate all expirations.",
     )
     args = parser.parse_args()
     urls = args.urls.split(",") if args.urls else CBOE_DEFAULT_URLS
     expiration_type = args.expiration_type or "all"
     expiration_month = args.expiration_month or "all"
+    split_visualization = args.split_visualization or False
+    zero_days = args.zero_days or False
     return {
         "urls": urls,
         "expiration_type": expiration_type,
         "expiration_month": expiration_month,
+        "split_visualization": split_visualization,
+        "zero_days": zero_days,
     }
 
 
@@ -48,8 +61,13 @@ if __name__ == "__main__":
     urls = args.get("urls")
     expiration_type = args.get("expiration_type")
     expiration_month = args.get("expiration_month")
+    split_visualization = args.get("split_visualization")
+    parse_only_zero_days = args.get("zero_days")
 
-    raw_csv_files_to_check = []
+    raw_csv_files_to_check = [
+        # ("data/raw/cboe_spx_quotedata_all_22-08-25.csv", "6,466.91"), # Uncomment only for DEBUG
+        # ("data/raw/cboe_spy_quotedata_all_22-08-25.csv", "650.0"),    # Uncomment only for DEBUG
+    ]
     for url in urls:
         options_csv_file_path, last_price = cboe_downloader.get_csv_and_last_price(
             url=url,
@@ -60,11 +78,13 @@ if __name__ == "__main__":
         raw_csv_files_to_check.append((options_csv_file_path, last_price))
 
     processed_files = [
-        # "data/processed/processed_cboe_spx_quotedata_all_20-08-25.json",
-        # "data/processed/processed_cboe_spy_quotedata_all_20-08-25.json",
+        # "data/processed/processed_cboe_spx_quotedata_all_22-08-25.json",  # Uncomment only for DEBUG
+        # "data/processed/processed_cboe_spy_quotedata_all_22-08-25.json",  # Uncomment only for DEBUG
     ]
     for file_path, last_price in raw_csv_files_to_check:
-        processed_file = parse_cboe_csv(file_path=file_path, last_price=last_price)
+        processed_file = parse_cboe_csv(
+            file_path=file_path, last_price=last_price, parse_only_zero_days=parse_only_zero_days
+        )
         processed_files.append(processed_file)
 
     total_gex_per_asset = {}
@@ -72,4 +92,8 @@ if __name__ == "__main__":
         calculated_gex = calculate_gex_per_strikes(processed_file_path=processed_file)
         total_gex_per_asset.update(calculated_gex)
 
-    plot_gex(total_gex_per_asset)
+    visualization_mode = "total"
+    if split_visualization:
+        visualization_mode = "split"
+
+    plot_gex(total_gex_per_asset, mode=visualization_mode)

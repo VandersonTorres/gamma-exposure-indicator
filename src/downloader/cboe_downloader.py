@@ -2,6 +2,7 @@ import os
 from datetime import datetime
 
 from playwright.sync_api._generated import Page
+from playwright._impl._errors import TimeoutError
 
 from src.settings import RAW_DIR
 from . import BaseDownloader
@@ -102,7 +103,12 @@ class CBOEDownloader(BaseDownloader):
                 "//div[contains(., 'Last:')]/div[contains(@class, 'Box-cui_') and contains(@class, 'Text-cui__')]"
             ).text_content()
 
-            self.setup_expiration(page=page, _type=expiration_type, _month=expiration_month)
+            try:
+                self.setup_expiration(page=page, _type=expiration_type, _month=expiration_month)
+            except TimeoutError as err:
+                self.logger.info(f"Retrying to set up expiration modules due to: {err}")
+                self.setup_expiration(page=page, _type=expiration_type, _month=expiration_month)
+
             with page.expect_download() as download_info:
                 page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
                 csv_link = page.locator("//a[contains(., 'Download CSV')]")

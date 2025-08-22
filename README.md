@@ -78,20 +78,36 @@ You can run the downloader using app.py passing (or not) the following arguments
 $ cd gamma-exposure-indicator
 ```
 
-1. **Download all options for SPX and SPY:**
+*NOTE: You can combine multiple args*
+
+0. **HELP MODE:**
+```bash
+$ python app.py -h
+```
+
+1. **Download all options for SPX and SPY for all expirations:**
 ```bash
 $ python app.py
 ```
 
-2. **Download all 0DTE options for SPX and SPY:**
+2. **Download only 0DTE options (Zero Days to Expiration):**
+```bash
+$ python app.py --zero_days True
+```
+
+3. **Download all standard expiration options for SPX and SPY:**
 ```bash
 $ python app.py --expiration_type standard
 ```
-*Note that if `expiration_type` is "standard" you shall ignore monthly expirations.*
 
-3. **Download all options for SPX and SPY expiring at august:**
+4. **Download all options for SPX and SPY expiring at august:**
 ```bash
-$ python app.py --expiration_type all --expiration_month agosto
+$ python app.py --expiration_month agosto
+```
+
+5. **Isolate the view of GEX results for both, call and puts separatedly, on the charts:**
+```bash
+$ python app.py --split_visualization True
 ```
 
 - **Output**:
