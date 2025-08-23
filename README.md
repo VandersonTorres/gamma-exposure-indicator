@@ -127,7 +127,7 @@ Designed to be modular, so adding CME downloads or analytics features is straigh
 
 # ESTUDO
 
-## CENÁRIOS MARKET MAKERS
+## CENÁRIOS MARKET MAKERS (Comportamento dos MM)
 
 ### Compressão de Volatilidade
 *(Market Maker está comprado em opções, tende a estabilizar o mercado.)*
