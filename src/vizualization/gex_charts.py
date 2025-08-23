@@ -37,13 +37,13 @@ def plot_gex(total_gex_per_asset: dict, path_to_store: str, mode: str = "total")
         else:
             bar_width = 1
 
-        # At max 70 bars far of the last price
+        # At max 30 bars far of the last price
         if last_price in strikes:
             last_idx = strikes.index(last_price)
         else:
             last_idx = min(range(len(strikes)), key=lambda i: abs(strikes[i] - last_price))
-        min_idx = max(0, last_idx - 70)
-        max_idx = min(len(strikes) - 1, last_idx + 70)
+        min_idx = max(0, last_idx - 30)
+        max_idx = min(len(strikes) - 1, last_idx + 30)
         strikes_focus = strikes[min_idx : max_idx + 1]
 
         # Criate Figure
@@ -73,9 +73,9 @@ def plot_gex(total_gex_per_asset: dict, path_to_store: str, mode: str = "total")
             else:
                 annot.set_visible(False)
 
-        # Bars: Blue for positive
         if mode == "total":
             values_focus = values[min_idx : max_idx + 1]
+            # Bars: Blue for positive
             ax.bar(
                 [s for s, v in zip(strikes_focus, values_focus) if v >= 0],
                 [v for v in values_focus if v >= 0],
