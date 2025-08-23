@@ -61,7 +61,7 @@ You can run the downloader using app.py passing (or not) the following arguments
 
 - Expiration Type: Type of expiration. Supported values:
 1. all (default)
-2. standard (0DTE)
+2. standard
 3. weekly
 4. quarterly
 5. monthly
