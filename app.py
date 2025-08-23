@@ -4,6 +4,7 @@ from src.analytics.gamma_exposure import calculate_gex_per_strikes
 from src.downloader.cboe_downloader import CBOEDownloader
 from src.parsers.cboe_parser import parse_cboe_csv
 from src.vizualization.gex_charts import plot_gex
+from src.settings import REPORTS_DIR
 
 CBOE_DEFAULT_URLS = [
     "https://www.cboe.com/delayed_quotes/spy/quote_table",  # ETF
@@ -96,4 +97,4 @@ if __name__ == "__main__":
     if split_visualization:
         visualization_mode = "split"
 
-    plot_gex(total_gex_per_asset, mode=visualization_mode)
+    plot_gex(total_gex_per_asset, path_to_store=REPORTS_DIR, mode=visualization_mode)

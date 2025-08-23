@@ -1,13 +1,16 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import os
+import webbrowser
 
 
-def plot_gex(total_gex_per_asset: dict, mode: str = "total"):
+def plot_gex(total_gex_per_asset: dict, path_to_store: str, mode: str = "total"):
     """
     Plot Gamma Exposure focused on most relevant strikes.
 
     Args:
-        total_gex_per_asset (dict): containing assets and gex per strikes
+        total_gex_per_asset (dict): containing assets and gex per strikes.
+        path_to_store (str): Path to save the charts.
         mode (str): Options of plotting
             - total: aggregated exposure per strike
             - split: separate exposure for calls and puts
@@ -34,17 +37,41 @@ def plot_gex(total_gex_per_asset: dict, mode: str = "total"):
         else:
             bar_width = 1
 
-        # At max 100 bars far of the last price
+        # At max 70 bars far of the last price
         if last_price in strikes:
             last_idx = strikes.index(last_price)
         else:
             last_idx = min(range(len(strikes)), key=lambda i: abs(strikes[i] - last_price))
-        min_idx = max(0, last_idx - 100)
-        max_idx = min(len(strikes) - 1, last_idx + 100)
+        min_idx = max(0, last_idx - 70)
+        max_idx = min(len(strikes) - 1, last_idx + 70)
         strikes_focus = strikes[min_idx : max_idx + 1]
 
         # Criate Figure
-        fig, ax = plt.subplots(figsize=(12, 6), dpi=120)
+        fig, ax = plt.subplots(figsize=(10, 5), dpi=120)
+
+        # Plot axios info during hover
+        annot = ax.annotate(
+            "",
+            xy=(0, 0),
+            xytext=(10, 10),
+            textcoords="offset points",
+            bbox=dict(boxstyle="round,pad=0.3", fc="white", alpha=0.4),
+            arrowprops=dict(arrowstyle="->"),
+        )
+        annot.set_visible(False)
+
+        def update_annot(event):
+            if event.inaxes == ax:
+                idx = np.argmin(np.abs(strikes - event.xdata))
+                x = strikes[idx]
+                y = values[idx]
+
+                annot.xy = (x, y)
+                annot.set_text(f"Strike: {x:.2f}\nGamma: {y:.2f}")
+                annot.set_visible(True)
+                fig.canvas.draw_idle()
+            else:
+                annot.set_visible(False)
 
         # Bars: Blue for positive
         if mode == "total":
@@ -132,8 +159,8 @@ def plot_gex(total_gex_per_asset: dict, mode: str = "total"):
             color="green",
             fontsize=8,
             fontweight="bold",
-            ha="left",
-            va="bottom",
+            ha="right",
+            va="top",
         )
 
         # Axios X zoom
@@ -145,10 +172,20 @@ def plot_gex(total_gex_per_asset: dict, mode: str = "total"):
 
         # Design
         ax.set_title(f"Gamma Exposure - {asset_title}", fontsize=16, fontweight="bold")
-        ax.set_xlabel("Strike Price", fontsize=12)
+        ax.set_xlabel("Strike Price", fontsize=12, fontweight="bold")
         ax.set_ylabel("Gamma Exposure", fontsize=12, fontweight="bold")
         ax.legend()
         ax.grid(True, linestyle="--", alpha=0.6)
 
+        fig.canvas.mpl_connect("motion_notify_event", update_annot)
         plt.tight_layout()
-        plt.show()
+
+        # Save the chart
+        filename = os.path.join(path_to_store, f"gex_{asset_title.lower().replace(' ', '_')}.png")
+        fig.savefig(filename, dpi=150, bbox_inches="tight")
+
+        # Show the charts into a webbrowser window
+        webbrowser.open("file://" + os.path.abspath(filename))
+
+        # Close the fig
+        plt.close(fig)
