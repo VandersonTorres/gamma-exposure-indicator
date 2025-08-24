@@ -109,7 +109,7 @@ def save_processed_strikes(processed_strikes: dict, raw_file_path: str) -> str:
         processed_strikes (dict): Strikes with calculated gex for calls and puts
         raw_file_path (str): Initial CSV file path
     """
-    name, _ = os.path.splitext(raw_file_path.split("/")[-1])
+    name = os.path.splitext(os.path.basename(raw_file_path))[0]
     filename = f"processed_{name}.json"
     output_path = os.path.join(PROCESSED_DIR, filename)
 

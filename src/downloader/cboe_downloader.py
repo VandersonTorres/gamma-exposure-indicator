@@ -74,7 +74,7 @@ class CBOEDownloader(BaseDownloader):
         self._sleep_between_actions()
 
         set_params = page.locator("//button[contains(., 'View Chain')]")
-        set_params.click()
+        set_params.click(no_wait_after=True)
         self._sleep_between_actions()
 
     def get_csv_and_last_price(
@@ -109,7 +109,7 @@ class CBOEDownloader(BaseDownloader):
                 self.logger.info(f"Retrying to set up expiration modules due to: {err}")
                 self.setup_expiration(page=page, _type=expiration_type, _month=expiration_month)
 
-            with page.expect_download() as download_info:
+            with page.expect_download(timeout=60000) as download_info:
                 page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
                 csv_link = page.locator("//a[contains(., 'Download CSV')]")
                 csv_link.wait_for(state="visible", timeout=3000)
