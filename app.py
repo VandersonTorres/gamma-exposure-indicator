@@ -3,7 +3,7 @@ import argparse
 from src.analytics.gamma_exposure import calculate_gex_per_strikes
 from src.downloader.cboe_downloader import CBOEDownloader
 from src.parsers.cboe_parser import parse_cboe_csv
-from src.vizualization.gex_charts import plot_gex
+from src.vizualization.gex_charts import handle_metrics
 from src.settings import REPORTS_DIR
 
 CBOE_DEFAULT_URLS = [
@@ -97,4 +97,37 @@ if __name__ == "__main__":
     if split_visualization:
         visualization_mode = "split"
 
-    plot_gex(total_gex_per_asset, path_to_store=REPORTS_DIR, mode=visualization_mode)
+    gex_metrics = handle_metrics(total_gex_per_asset, path_to_store=REPORTS_DIR, mode=visualization_mode)
+
+    pine_script = ""
+    for asset, metrics in gex_metrics.items():
+        if "spx" in asset:
+            pine_script = (
+                "// This Pine Script® code is subject to the terms of "
+                "the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/\n"
+                "// © Tenv66\n\n"
+                "//@version=6\n"
+                "indicator('GEX Levels', overlay=true)\n\n"
+                f"call_wall = {metrics.get('call_wall_strike')}\n"
+                f"put_wall  = {metrics.get('put_wall_strike')}\n"
+                f"top_calls = array.from({metrics.get('top_calls')})\n"
+                f"top_puts  = array.from({metrics.get('top_puts')})\n\n"
+                "// Call Wall and Put Wall (static lines with hline)\n"
+                "hline(call_wall, 'Call Wall', color=color.blue, linewidth=2, "
+                "linestyle=hline.style_solid)\n"
+                "hline(put_wall, 'Put Wall', color=color.red, linewidth=2, "
+                "linestyle=hline.style_solid)\n\n"
+                "// Function to draw horizontal dynamic lines\n"
+                "f_draw_levels(levels_array, col) =>\n"
+                "  for i = 0 to array.size(levels_array) - 1\n"
+                "    level = array.get(levels_array, i)\n"
+                "    line.new(bar_index[100], level, bar_index, level, extend=extend.both, "
+                "style=line.style_dashed, color=col, width=1)\n\n"
+                "// Draw top calls (dark blue)\n"
+                "f_draw_levels(top_calls, color.rgb(62, 34, 186))\n\n"
+                "// Draw top puts (blood red)\n"
+                "f_draw_levels(top_puts, color.rgb(161, 17, 94))\n"
+            )
+
+    if pine_script:
+        print(f"\n>>> Place the following Pine Script on the code editor of TradingView:\n{pine_script}")

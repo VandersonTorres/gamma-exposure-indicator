@@ -2,9 +2,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 import webbrowser
+from copy import deepcopy
 
 
-def plot_gex(total_gex_per_asset: dict, path_to_store: str, mode: str = "total"):
+def handle_metrics(total_gex_per_asset: dict, path_to_store: str, mode: str = "total"):
     """
     Plot Gamma Exposure focused on most relevant strikes.
 
@@ -15,6 +16,7 @@ def plot_gex(total_gex_per_asset: dict, path_to_store: str, mode: str = "total")
             - total: aggregated exposure per strike
             - split: separate exposure for calls and puts
     """
+    gex_metrics = deepcopy(total_gex_per_asset)
     for asset, gex_data in total_gex_per_asset.items():
         name_parts = asset.split("_")
         date_part = name_parts[-1]
@@ -76,7 +78,7 @@ def plot_gex(total_gex_per_asset: dict, path_to_store: str, mode: str = "total")
         if mode == "total":
             values_focus = values[min_idx : max_idx + 1]
             # Bars: Blue for positive
-            ax.bar(
+            bars_pos = ax.bar(
                 [s for s, v in zip(strikes_focus, values_focus) if v >= 0],
                 [v for v in values_focus if v >= 0],
                 width=bar_width,
@@ -86,7 +88,7 @@ def plot_gex(total_gex_per_asset: dict, path_to_store: str, mode: str = "total")
             )
 
             # Bars: Red for negative
-            ax.bar(
+            bars_neg = ax.bar(
                 [s for s, v in zip(strikes_focus, values_focus) if v < 0],
                 [v for v in values_focus if v < 0],
                 width=bar_width,
@@ -95,19 +97,39 @@ def plot_gex(total_gex_per_asset: dict, path_to_store: str, mode: str = "total")
                 label="Negative Gamma Exposure",
             )
         elif mode == "split":
-            ax.bar(strikes, calls, width=bar_width, color="royalblue", alpha=0.6, label="Calls Exposure")
-            ax.bar(strikes, puts, width=bar_width, color="indianred", alpha=0.6, label="Puts Exposure")
+            bars_pos = ax.bar(strikes, calls, width=bar_width, color="royalblue", alpha=0.6, label="Calls Exposure")
+            bars_neg = ax.bar(strikes, puts, width=bar_width, color="indianred", alpha=0.6, label="Puts Exposure")
 
             values_focus = [c + p for c, p in zip(calls, puts)][min_idx : max_idx + 1]
+
+        # Plot strike values above the bars
+        ax.bar_label(
+            bars_pos,
+            labels=[f"{s:.2f}" for s, v in zip(strikes_focus, values_focus) if v >= 0],
+            padding=2,
+            fontsize=5,
+            color="darkblue",
+            rotation=90,
+        )
+        ax.bar_label(
+            bars_neg,
+            labels=[f"{s:.2f}" for s, v in zip(strikes_focus, values_focus) if v < 0],
+            padding=2,
+            fontsize=5,
+            color="purple",
+            rotation=90,
+        )
 
         if mode == "total":
             # Find call wall strike
             call_wall_idx = values_focus.index(max(values_focus))
             call_wall_strike = strikes_focus[call_wall_idx]
+            gex_metrics[asset]["call_wall_strike"] = call_wall_strike
 
             # Find put wall strike
             put_wall_idx = values_focus.index(min(values_focus))
             put_wall_strike = strikes_focus[put_wall_idx]
+            gex_metrics[asset]["put_wall_strike"] = put_wall_strike
 
             # Call wall line
             ax.axvline(
@@ -122,7 +144,7 @@ def plot_gex(total_gex_per_asset: dict, path_to_store: str, mode: str = "total")
                 max(values_focus),
                 f"Call Wall\n{call_wall_strike:.2f}",
                 color="blue",
-                fontsize=8,
+                fontsize=6,
                 fontweight="bold",
                 ha="left",
                 va="bottom",
@@ -141,11 +163,33 @@ def plot_gex(total_gex_per_asset: dict, path_to_store: str, mode: str = "total")
                 min(values_focus),
                 f"Put Wall\n{put_wall_strike:.2f}",
                 color="purple",
-                fontsize=8,
+                fontsize=6,
                 fontweight="bold",
                 ha="left",
                 va="bottom",
             )
+
+        # === Detach top 4 positives ===
+        top_calls = []
+        pos_values = [bar.get_height() for bar in bars_pos]
+        if pos_values:
+            top_pos_idx = np.argsort(pos_values)[-4:]
+            for i in top_pos_idx:
+                top_calls.append(bars_pos[i].get_x().item())
+                bars_pos[i].set_color("darkblue")
+        top_calls = ", ".join([str(call) for call in top_calls])
+        gex_metrics[asset]["top_calls"] = top_calls
+
+        # === Detach top 4 negatives ===
+        top_puts = []
+        neg_values = [bar.get_height() for bar in bars_neg]
+        if neg_values:
+            top_neg_idx = np.argsort(neg_values)[:4]
+            for i in top_neg_idx:
+                top_puts.append(bars_neg[i].get_x().item())
+                bars_neg[i].set_color("darkred")
+        top_puts = ", ".join([str(put) for put in top_puts])
+        gex_metrics[asset]["top_puts"] = top_puts
 
         # Zero Line
         ax.axhline(0, color="black", linewidth=0.8)
@@ -189,3 +233,5 @@ def plot_gex(total_gex_per_asset: dict, path_to_store: str, mode: str = "total")
 
         # Close the fig
         plt.close(fig)
+
+    return gex_metrics

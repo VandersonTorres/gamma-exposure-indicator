@@ -11,10 +11,11 @@ def calculate_gex_per_strikes(processed_file_path: str) -> dict:
     Args:
         processed_file_path (str): Path of the processed data file
     Returns:
-        dict: A structured dict containing the total gamma exposure for each strike
-        {
-            "strike1": GEX VALUE,
-            "strike2": GEX VALUE,
+        dict: {
+            "asset": {
+                strike: { "call": ..., "put": ..., "total": ... },
+                "last_price": float,
+            }
         }
     """
     asset_name, _ = os.path.splitext(processed_file_path.split("/")[-1])
@@ -24,6 +25,8 @@ def calculate_gex_per_strikes(processed_file_path: str) -> dict:
 
     last_price = processed_data.pop("last_price")
     total_gex_per_strike = {asset_name: {}}
+
+    # Calculate GEX per strike
     for strike, options in processed_data.items():
         call_gex = sum([option.get("gex_at_call") for option in options])
         put_gex = sum([option.get("gex_at_put") for option in options])
@@ -33,10 +36,9 @@ def calculate_gex_per_strikes(processed_file_path: str) -> dict:
             "put": put_gex,
             "total": total_gex,
         }
-
-    logger.info(f"Calculated Total Gamma Exposure per strike for '{asset_name}'.")
     total_gex_per_strike[asset_name]["last_price"] = last_price
 
+    logger.info(f"Calculated GEX metrics for '{asset_name}'.")
     return total_gex_per_strike
 
 
