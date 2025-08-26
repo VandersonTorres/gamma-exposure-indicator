@@ -54,7 +54,7 @@ class BaseDownloader:
                 self._context = self._browser.new_context()
                 self._page = self._context.new_page()
                 self.logger.info(f"Navigating to {url}...")
-                self._page.goto(url, wait_until="load")
+                self._page.goto(url, wait_until="load", timeout=60000)
                 return self._page
 
             def __exit__(inner_self, exc_type, exc_val, exc_tb):

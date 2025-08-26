@@ -174,10 +174,14 @@ def handle_metrics(total_gex_per_asset: dict, path_to_store: str, mode: str = "t
         pos_values = [bar.get_height() for bar in bars_pos]
         if pos_values:
             top_pos_idx = np.argsort(pos_values)[-4:]
+            # Sort from highest to lowest
+            top_pos_idx = sorted(top_pos_idx, key=lambda i: pos_values[i], reverse=True)
             for i in top_pos_idx:
-                top_calls.append(bars_pos[i].get_x().item())
+                # Rounds to the closest 5 multiple
+                call = round(bars_pos[i].get_x() / 5) * 5
+                top_calls.append(call)
                 bars_pos[i].set_color("darkblue")
-        top_calls = ", ".join([str(call) for call in top_calls])
+        top_calls = ", ".join([str(call) for call in top_calls][1:])
         gex_metrics[asset]["top_calls"] = top_calls
 
         # === Detach top 4 negatives ===
@@ -185,10 +189,14 @@ def handle_metrics(total_gex_per_asset: dict, path_to_store: str, mode: str = "t
         neg_values = [bar.get_height() for bar in bars_neg]
         if neg_values:
             top_neg_idx = np.argsort(neg_values)[:4]
+            # Sort from highest to lowest
+            top_neg_idx = sorted(top_neg_idx, key=lambda i: neg_values[i], reverse=False)
             for i in top_neg_idx:
-                top_puts.append(bars_neg[i].get_x().item())
+                # Rounds to the closest 5 multiple
+                put = round(bars_neg[i].get_x() / 5) * 5
+                top_puts.append(put)
                 bars_neg[i].set_color("darkred")
-        top_puts = ", ".join([str(put) for put in top_puts])
+        top_puts = ", ".join([str(put) for put in top_puts][1:])
         gex_metrics[asset]["top_puts"] = top_puts
 
         # Zero Line
