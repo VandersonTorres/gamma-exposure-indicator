@@ -36,10 +36,6 @@ class CBOEDownloader(BaseDownloader):
             _type (str): Type of expiration.
             _month (str): Expiration month for current year (portuguese).
         """
-        if _type.lower() != "standard":
-            # Type "standard" == 0DTE
-            _month = "all"
-
         # Sets Expiration Type
         self.select_options_from_dropdown(
             page=page,
@@ -86,7 +82,7 @@ class CBOEDownloader(BaseDownloader):
             url (url): URL to be requested
             expiration_type (str): Type of expiration. Supported values:
                 - "all" (Default)
-                - "standard" (0DTE)
+                - "standard"
                 - "weekly"
                 - "quarterly"
                 - "monthly"
@@ -116,7 +112,6 @@ class CBOEDownloader(BaseDownloader):
                 csv_link.click()
 
             download = download_info.value
-            expiration_type = "0dte" if expiration_type.lower() == "standard" else expiration_type
             name, _ = os.path.splitext(download.suggested_filename)
             filename = f"{name}_{expiration_type}"
             filename = f"{filename}_{expiration_month}" if expiration_month.lower() != "all" else filename

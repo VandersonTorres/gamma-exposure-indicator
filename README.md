@@ -110,6 +110,10 @@ $ python app.py --expiration_month agosto
 $ python app.py --split_visualization True
 ```
 
+6. **Calculate Gamma Flip Point:**
+```bash
+$ python app.py --flip_point True
+```
 - **Output**:
 
     CSV files will be saved in the directory specified in src/settings.py (default: data/raw/) with filenames like: `SPX_monthly_agosto_17-08-23.csv`

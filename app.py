@@ -1,10 +1,12 @@
 import argparse
+import os
 
 from src.analytics.gamma_exposure import calculate_gex_per_strikes
 from src.downloader.cboe_downloader import CBOEDownloader
 from src.parsers.cboe_parser import parse_cboe_csv
 from src.vizualization.gex_charts import handle_metrics
-from src.settings import REPORTS_DIR
+from src.settings import REPORTS_DIR, TEMP_DIR
+from src.utils import extract_date
 
 CBOE_DEFAULT_URLS = [
     "https://www.cboe.com/delayed_quotes/spy/quote_table",  # ETF
@@ -41,22 +43,30 @@ def _args() -> dict:
         type=bool,
         help="Consider only Zero Days To Expiration options (0DTE). Ommit to calculate all expirations.",
     )
+    parser.add_argument(
+        "--flip_point",
+        type=bool,
+        help="Consider only Zero Days To Expiration options (0DTE). Ommit to calculate all expirations.",
+    )
     args = parser.parse_args()
     urls = args.urls.split(",") if args.urls else CBOE_DEFAULT_URLS
     expiration_type = args.expiration_type or "all"
     expiration_month = args.expiration_month or "all"
     split_visualization = args.split_visualization or False
     zero_days = args.zero_days or False
+    calc_flip_point = args.flip_point or False
     return {
         "urls": urls,
         "expiration_type": expiration_type,
         "expiration_month": expiration_month,
         "split_visualization": split_visualization,
         "zero_days": zero_days,
+        "calc_flip_point": calc_flip_point,
     }
 
 
 if __name__ == "__main__":
+    # TODO: Separate this snnipet to parts
     cboe_downloader = CBOEDownloader()
     args = _args()
     urls = args.get("urls")
@@ -64,6 +74,7 @@ if __name__ == "__main__":
     expiration_month = args.get("expiration_month")
     split_visualization = args.get("split_visualization")
     parse_only_zero_days = args.get("zero_days")
+    calc_flip_point = args.get("calc_flip_point")
 
     raw_csv_files_to_check = [
         # ("data/raw/cboe_spx_quotedata_all_22-08-25.csv", "6,466.91"), # Uncomment only for DEBUG
@@ -84,7 +95,10 @@ if __name__ == "__main__":
     ]
     for file_path, last_price in raw_csv_files_to_check:
         processed_file = parse_cboe_csv(
-            file_path=file_path, last_price=last_price, parse_only_zero_days=parse_only_zero_days
+            file_path=file_path,
+            last_price=last_price,
+            parse_only_zero_days=parse_only_zero_days,
+            calc_flip_point=calc_flip_point,
         )
         processed_files.append(processed_file)
 
@@ -96,6 +110,24 @@ if __name__ == "__main__":
     visualization_mode = "total"
     if split_visualization:
         visualization_mode = "split"
+
+    # ASSIGN THE LAST FLIP TO THE CORRECT ASSET
+    files = os.listdir(TEMP_DIR)
+    flip_spx_file = max((f for f in files if "spx" in f), key=extract_date, default=None)
+    flip_spy_file = max((f for f in files if "spy" in f), key=extract_date, default=None)
+    flip_spx = ""
+    flip_spy = ""
+    if flip_spx_file:
+        with open(os.path.join(TEMP_DIR, flip_spx_file), "r") as f:
+            flip_spx = f.read()
+    if flip_spy_file:
+        with open(os.path.join(TEMP_DIR, flip_spy_file), "r") as f:
+            flip_spy = f.read()
+    for asset, results in total_gex_per_asset.items():
+        if "spx" in asset:
+            total_gex_per_asset[asset]["flip"] = flip_spx
+        elif "spy" in asset:
+            total_gex_per_asset[asset]["flip"] = flip_spy
 
     gex_metrics = handle_metrics(total_gex_per_asset, path_to_store=REPORTS_DIR, mode=visualization_mode)
 

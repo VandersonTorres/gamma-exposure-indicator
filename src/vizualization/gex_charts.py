@@ -23,6 +23,7 @@ def handle_metrics(total_gex_per_asset: dict, path_to_store: str, mode: str = "t
         asset_title = f"{name_parts[1].upper()} {name_parts[2].upper()} {date_part}"
 
         last_price = gex_data.pop("last_price")
+        flip_point = gex_data.pop("flip")
 
         # Sort strikes
         strikes = sorted([float(k) for k in gex_data.keys()])
@@ -163,6 +164,21 @@ def handle_metrics(total_gex_per_asset: dict, path_to_store: str, mode: str = "t
                 min(values_focus),
                 f"Put Wall\n{put_wall_strike:.2f}",
                 color="purple",
+                fontsize=6,
+                fontweight="bold",
+                ha="left",
+                va="bottom",
+            )
+
+        # Plot Flip Point if it exists
+        if flip_point:
+            flip_point = float(flip_point)
+            ax.axvline(x=flip_point, color="red", linestyle="--", linewidth=2, label=f"Gamma Flip ({flip_point:.2f})")
+            ax.text(
+                flip_point,
+                min(values_focus),
+                f"Gamma Flip ({flip_point:.2f})",
+                color="red",
                 fontsize=6,
                 fontweight="bold",
                 ha="left",
