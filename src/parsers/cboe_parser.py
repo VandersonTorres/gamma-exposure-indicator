@@ -49,7 +49,9 @@ def calculate_gamma_exposure(gamma_value: float, open_interest: float, option_ty
     return gex_value
 
 
-def calculate_gamma_flip(df: pd.DataFrame, _metadata: list, last_price: float, file_path: str) -> int:
+def calculate_gamma_flip(
+    df: pd.DataFrame, _metadata: list, last_price: float, parse_only_zero_days: bool, file_path: str
+) -> int:
     """
     Calculate the Gamma Flip point for a given options DataFrame and save the result to a file.
 
@@ -63,6 +65,7 @@ def calculate_gamma_flip(df: pd.DataFrame, _metadata: list, last_price: float, f
             'Expiration Date', 'Strike', 'IV', 'IV.1', 'Open Interest', 'Open Interest.1'.
         _metadata (list): Metadata list containing the file's date at index 2.
         last_price (float): Current spot price of the underlying asset.
+        parse_only_zero_days (bool): Consider only zero days to expiration.
         file_path (str): Path of the (raw) file to be readed (csv)
 
     Returns:
@@ -79,6 +82,9 @@ def calculate_gamma_flip(df: pd.DataFrame, _metadata: list, last_price: float, f
     today_date = datetime(year=parsed_date.year, month=parsed_date.month, day=parsed_date.day)
 
     df["Expiration Date"] = pd.to_datetime(df["Expiration Date"])
+    if parse_only_zero_days:
+        df = df[df["Expiration Date"].dt.date == today_date.date()]
+
     df["IsThirdFriday"] = [isThirdFriday(x) for x in df["Expiration Date"]]
     df["daysTillExp"] = [
         (
@@ -217,7 +223,7 @@ def generate_leads(
     processed_strikes["last_price"] = last_price
 
     if calc_flip_point:
-        calculate_gamma_flip(df, _metadata, last_price, file_path)
+        calculate_gamma_flip(df, _metadata, last_price, parse_only_zero_days, file_path)
 
     return processed_strikes
 
