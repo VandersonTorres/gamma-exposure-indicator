@@ -5,7 +5,7 @@ import webbrowser
 from copy import deepcopy
 
 
-def handle_metrics(total_gex_per_asset: dict, path_to_store: str, mode: str = "total"):
+def process_metrics(total_gex_per_asset: dict, path_to_store: str, mode: str):
     """
     Plot Gamma Exposure focused on most relevant strikes.
 
@@ -184,6 +184,7 @@ def handle_metrics(total_gex_per_asset: dict, path_to_store: str, mode: str = "t
                 ha="left",
                 va="bottom",
             )
+            gex_metrics[asset]["flip_point"] = flip_point
 
         # === Detach top 4 positives ===
         top_calls = []

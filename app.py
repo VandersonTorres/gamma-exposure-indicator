@@ -1,17 +1,6 @@
 import argparse
-import os
 
-from src.analytics.gamma_exposure import calculate_gex_per_strikes
-from src.downloader.cboe_downloader import CBOEDownloader
-from src.parsers.cboe_parser import parse_cboe_csv
-from src.vizualization.gex_charts import handle_metrics
-from src.settings import REPORTS_DIR, TEMP_DIR
-from src.utils import extract_date
-
-CBOE_DEFAULT_URLS = [
-    "https://www.cboe.com/delayed_quotes/spy/quote_table",  # ETF
-    "https://www.cboe.com/delayed_quotes/spx/quote_table",  # SPOT
-]
+from src.app_manager import GEXIndicatorManager
 
 
 def _args() -> dict:
@@ -49,12 +38,12 @@ def _args() -> dict:
         help="Consider only Zero Days To Expiration options (0DTE). Ommit to calculate all expirations.",
     )
     args = parser.parse_args()
-    urls = args.urls.split(",") if args.urls else CBOE_DEFAULT_URLS
-    expiration_type = args.expiration_type or "all"
-    expiration_month = args.expiration_month or "all"
-    split_visualization = args.split_visualization or False
-    zero_days = args.zero_days or False
-    calc_flip_point = args.flip_point or False
+    urls = args.urls.split(",") if args.urls else None
+    expiration_type = args.expiration_type
+    expiration_month = args.expiration_month
+    split_visualization = args.split_visualization
+    zero_days = args.zero_days
+    calc_flip_point = args.flip_point
     return {
         "urls": urls,
         "expiration_type": expiration_type,
@@ -66,102 +55,16 @@ def _args() -> dict:
 
 
 if __name__ == "__main__":
-    # TODO: Separate this snnipet to parts
-    cboe_downloader = CBOEDownloader()
     args = _args()
-    urls = args.get("urls")
-    expiration_type = args.get("expiration_type")
-    expiration_month = args.get("expiration_month")
-    split_visualization = args.get("split_visualization")
-    parse_only_zero_days = args.get("zero_days")
-    calc_flip_point = args.get("calc_flip_point")
 
-    raw_csv_files_to_check = [
-        # ("data/raw/cboe_spx_quotedata_all_22-08-25.csv", "6,466.91"), # Uncomment only for DEBUG
-        # ("data/raw/cboe_spy_quotedata_all_22-08-25.csv", "650.0"),    # Uncomment only for DEBUG
-    ]
-    for url in urls:
-        options_csv_file_path, last_price = cboe_downloader.get_csv_and_last_price(
-            url=url,
-            expiration_type=expiration_type,
-            expiration_month=expiration_month,
-            # headless=False  # Uncomment to show browser
-        )
-        raw_csv_files_to_check.append((options_csv_file_path, last_price))
-
-    processed_files = [
-        # "data/processed/processed_cboe_spx_quotedata_all_22-08-25.json",  # Uncomment only for DEBUG
-        # "data/processed/processed_cboe_spy_quotedata_all_22-08-25.json",  # Uncomment only for DEBUG
-    ]
-    for file_path, last_price in raw_csv_files_to_check:
-        processed_file = parse_cboe_csv(
-            file_path=file_path,
-            last_price=last_price,
-            parse_only_zero_days=parse_only_zero_days,
-            calc_flip_point=calc_flip_point,
-        )
-        processed_files.append(processed_file)
-
-    total_gex_per_asset = {}
-    for processed_file in processed_files:
-        calculated_gex = calculate_gex_per_strikes(processed_file_path=processed_file)
-        total_gex_per_asset.update(calculated_gex)
-
-    visualization_mode = "total"
-    if split_visualization:
-        visualization_mode = "split"
-
-    # ASSIGN THE LAST FLIP TO THE CORRECT ASSET
-    files = os.listdir(TEMP_DIR)
-    flip_spx_file = max((f for f in files if "spx" in f), key=extract_date, default=None)
-    flip_spy_file = max((f for f in files if "spy" in f), key=extract_date, default=None)
-    flip_spx = ""
-    flip_spy = ""
-    if flip_spx_file:
-        with open(os.path.join(TEMP_DIR, flip_spx_file), "r") as f:
-            flip_spx = f.read()
-    if flip_spy_file:
-        with open(os.path.join(TEMP_DIR, flip_spy_file), "r") as f:
-            flip_spy = f.read()
-    for asset, results in total_gex_per_asset.items():
-        if "spx" in asset:
-            total_gex_per_asset[asset]["flip"] = flip_spx
-        elif "spy" in asset:
-            total_gex_per_asset[asset]["flip"] = flip_spy
-
-    gex_metrics = handle_metrics(total_gex_per_asset, path_to_store=REPORTS_DIR, mode=visualization_mode)
-
-    pine_script = ""
-    for asset, metrics in gex_metrics.items():
-        if "spx" in asset:
-            pine_script = (
-                "// This Pine Script® code is subject to the terms of "
-                "the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/\n"
-                "// © Tenv66\n\n"
-                "//@version=6\n"
-                "indicator('GEX Levels', overlay=true)\n\n"
-                f"call_wall = {metrics.get('call_wall_strike')}\n"
-                f"put_wall  = {metrics.get('put_wall_strike')}\n"
-                f"top_calls = array.from({metrics.get('top_calls')})\n"
-                f"top_puts  = array.from({metrics.get('top_puts')})\n\n"
-                "// Call Wall and Put Wall (static lines with hline)\n"
-                "hline(call_wall, 'Call Wall', color=color.blue, linewidth=2, "
-                "linestyle=hline.style_solid)\n"
-                "hline(put_wall, 'Put Wall', color=color.red, linewidth=2, "
-                "linestyle=hline.style_solid)\n\n"
-                "// Function to draw horizontal dynamic lines\n"
-                "f_draw_levels(levels_array, col) =>\n"
-                "  for i = 0 to array.size(levels_array) - 1\n"
-                "    level = array.get(levels_array, i)\n"
-                "    line.new(bar_index[100], level, bar_index, level, extend=extend.both, "
-                "style=line.style_dashed, color=col, width=1)\n"
-                "    label.new(bar_index, level, str.tostring(i + 1), "
-                "style=label.style_label_left, textcolor=color.white, color=col)\n\n"
-                "// Draw top calls (dark blue)\n"
-                "f_draw_levels(top_calls, color.rgb(62, 34, 186))\n\n"
-                "// Draw top puts (blood red)\n"
-                "f_draw_levels(top_puts, color.rgb(161, 17, 94))\n"
-            )
-
-    if pine_script:
-        print(f"\n>>> Place the following Pine Script on the code editor of TradingView:\n{pine_script}")
+    app_manager = GEXIndicatorManager(
+        urls=args.get("urls"),
+        expiration_type=args.get("expiration_type"),
+        expiration_month=args.get("expiration_month"),
+        split_visualization=args.get("split_visualization"),
+        parse_only_zero_days=args.get("zero_days"),
+        calc_flip_point=args.get("calc_flip_point"),
+    )
+    app_manager.run(
+        # headless=False  # Uncomment to see navigation
+    )

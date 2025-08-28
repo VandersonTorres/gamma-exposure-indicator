@@ -1,15 +1,19 @@
 # Gamma Exposure Indicator
 
-**Gamma Exposure Indicator** is a Python tool with a modular and extendable architecture using Playwright that automates the download of S&P 500 options CSV files from CBOE and CME, calculates the dealer's Gamma Exposure (GEX) and build charts structured with the results from the data analysis. It supports crawling ETF (SPY), Spot (SPX) and Futures (ES) data.
+**Gamma Exposure Indicator** is a Python tool with a modular and extendable architecture using Playwright that automates the download of Financial Assets such as S&P 500 options CSV files from CBOE, calculates the dealer's Gamma Exposure (GEX) Metrics and build structured charts with the results from the data analysis. It supports crawling ETFs (SPY), Spots (SPX), Futures (ES), Commodities, etc.
+
+![Analysis Chart](data/reports/gex_cboe_spx_27-08-25.png)
+![Plotted Indicator](data/temp_files/1.plotted_indicator_example.jpeg)
 
 ---
 
 ## Features
 
-- Crawl CBOE pages for SPX (Spot) and SPY (ETF) options.            ✅
-- Download and save structured options CSV files.                   ✅
-- Calculate the Dealers and Market Makers Gamma Exposure (GEX).
+- Crawl CBOE pages for any Financial Asset options.
+- Download and save structured options CSV files.
+- Calculate the Dealers and Market Makers Gamma Exposure (GEX) Metrics, including the Flip Gamma.
 - Structure the analysis result's visualization into charts.
+- Generate a Pine Script to simply copy and paste into Code Editor of Trading View, to automatically plot the lines.
 
 ---
 
@@ -52,12 +56,9 @@ $ pre-commit install
 ---
 
 ## Usage
-You can run the downloader using app.py passing (or not) the following arguments:
+You can run the downloader using the `app.py` passing (or not) the following arguments:
 
-- URLs: Comma-separated URLs to crawl (url1,url2,url3). Default:
-1. https://www.cboe.com/delayed_quotes/spy/quote_table
-2. https://www.cboe.com/delayed_quotes/spx/quote_table
-
+- URLs: Comma-separated URLs to crawl (url1,url2,url3). Default: `https://www.cboe.com/delayed_quotes/spx/quote_table`
 
 - Expiration Type: Type of expiration. Supported values:
 1. all (default)
@@ -85,7 +86,7 @@ $ cd gamma-exposure-indicator
 $ python app.py -h
 ```
 
-1. **Download all options for SPX and SPY for all expirations:**
+1. **Download all options for SPX for all expirations:**
 ```bash
 $ python app.py
 ```
@@ -95,17 +96,17 @@ $ python app.py
 $ python app.py --zero_days True
 ```
 
-3. **Download all standard expiration options for SPX and SPY:**
+3. **Download all standard expiration options for SPX:**
 ```bash
 $ python app.py --expiration_type standard
 ```
 
-4. **Download all options for SPX and SPY expiring at august:**
+4. **Download all options for SPX expiring at august:**
 ```bash
 $ python app.py --expiration_month agosto
 ```
 
-5. **Isolate the view of GEX results for both, call and puts separatedly, on the charts:**
+5. **Isolate the view of GEX results for both call and puts separatedly, on the charts:**
 ```bash
 $ python app.py --split_visualization True
 ```
@@ -116,7 +117,9 @@ $ python app.py --flip_point True
 ```
 - **Output**:
 
-    CSV files will be saved in the directory specified in src/settings.py (default: data/raw/) with filenames like: `SPX_monthly_agosto_17-08-23.csv`
+    CSV, Processed JSON files, and Reports (Charts PNG) will be saved in the directories specified in `src/settings.py`.
+
+    A Pine Script will be showed to simply copy and paste into Code Editor of Trading View. This will plot the lines.
 
 ---
 
@@ -125,65 +128,64 @@ The downloader is built with Playwright (sync API). Ensure browsers are installe
 
 The tool handles cookie popups automatically.
 
-Designed to be modular, so adding CME downloads or analytics features is straightforward.
+Designed to be modular, so adding other platforms downloads or analytics features is straightforward.
 
 ---
 
-# ESTUDO
+# STUDY
 
-## CENÁRIOS MARKET MAKERS (Comportamento dos MM)
+## MARKET MAKER SCENARIOS (MM Behavior)
 
-### Compressão de Volatilidade
-*(Market Maker está comprado em opções, tende a estabilizar o mercado.)*
+### Volatility Compression
+*(Market Maker is long options, tends to stabilize the market.)*
 
-1. Compra de Calls:
+1. Buying Calls:
 
     D + | G +
 
-    - Se o mercado sobe  ->  Venda do Ativo
-    - Se o mercado cai   ->  Compra do Ativo
-    (compra fundo | vende topo)
+    - If the market goes up  ->  Sell the Underlying
+    - If the market goes down ->  Buy the Underlying
+    (buy the dip | sell the top)
 
-    Explicação:
-    - Se o preço sobe, o DELTA (+) aumenta, então ele zera o delta vendendo o ativo.
-    - Se o preço cai, o DELTA (+) diminui, e ele zera comprando o ativo.
+    Explanation:
+    - If the price rises, DELTA (+) increases, so the MM neutralizes delta by selling the underlying.
+    - If the price falls, DELTA (+) decreases, so the MM neutralizes by buying the underlying.
 
-2. Compra de Puts:
+2. Buying Puts:
 
     D - | G +
 
-    - Se o mercado sobe  ->  Venda do Ativo
-    - Se o mercado cai   ->  Compra do Ativo
-    (compra fundo | vende topo)
+    - If the market goes up  ->  Sell the Underlying
+    - If the market goes down ->  Buy the Underlying
+    (buy the dip | sell the top)
 
-    Explicação:
-    - Se o preço sobe, o DELTA (-) diminui (fica menos negativo), então ele zera vendendo o ativo
-    - Se o preço cai, o DELTA (-) aumenta (fica mais negativo), então ele zera comprando o ativo
+    Explanation:
+    - If the price rises, DELTA (-) decreases (becomes less negative), so the MM neutralizes by selling the underlying.
+    - If the price falls, DELTA (-) increases (becomes more negative), so the MM neutralizes by buying the underlying.
 
-### Expansão de Volatilidade
-*(Market Maker está vendido em opções, tende a amplificar o movimento do mercado.)*
+### Volatility Expansion
+*(Market Maker is short options, tends to amplify market movements.)*
 
-1. Venda de Calls:
+1. Selling Calls:
 
     D + | G -
 
-    - Se o mercado sobe ->  Compra do Ativo
-    - Se o mercado cai  ->  Venda do Ativo
-    (compra topo | vende fundo)
+    - If the market goes up  ->  Buy the Underlying
+    - If the market goes down ->  Sell the Underlying
+    (buy the top | sell the bottom)
 
-    Explicação:
-    - Se o preço sobe, o DELTA (+) aumenta, mas como o MM está vendido em calls, seu risco aumenta, então ele precisa comprar o ativo para cobrir.
-    - Se o preço cai, o DELTA (+) diminui, então MM precisa vender o ativo.
+    Explanation:
+    - If the price rises, DELTA (+) increases, but since the MM is short calls, risk increases, so they need to buy the underlying to hedge.
+    - If the price falls, DELTA (+) decreases, so the MM needs to sell the underlying.
 
-2. Venda de Puts
+2. Selling Puts:
 
     D - | G -
 
-    - Se o mercado sobe ->   Compra do Ativo
-    - Se o mercado cai  ->   Venda do Ativo
-    (compra topo | vende fundo)
+    - If the market goes up  ->  Buy the Underlying
+    - If the market goes down ->  Sell the Underlying
+    (buy the top | sell the bottom)
 
-    Explicação:
-
-    - Se o preço sobe, o DELTA (-) diminui (fica menos negativo), então ele precisa comprar o ativo.
-    - Se o preço cai, o DELTA (-) aumenta (fica mais negativo), então ele precisa vender ativo.
+    Explanation:
+    - If the price rises, DELTA (-) decreases (becomes less negative), so the MM needs to buy the underlying.
+    - If the price falls, DELTA (-) increases (becomes more negative), so the MM needs to sell the underlying.
