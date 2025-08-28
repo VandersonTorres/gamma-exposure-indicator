@@ -3,7 +3,7 @@
 **Gamma Exposure Indicator** is a Python tool with a modular and extendable architecture using Playwright that automates the download of Financial Assets such as S&P 500 options CSV files from CBOE, calculates the dealer's Gamma Exposure (GEX) Metrics and build structured charts with the results from the data analysis. It supports crawling ETFs (SPY), Spots (SPX), Futures (ES), Commodities, etc.
 
 ![Analysis Chart](data/reports/gex_cboe_spx_27-08-25.png)
-![Plotted Indicator](data/temp_files/1.plotted_indicator_example.jpeg)
+![Plotted Indicator](data/reports/1.plotted_indicator_example.jpeg)
 
 ---
 
