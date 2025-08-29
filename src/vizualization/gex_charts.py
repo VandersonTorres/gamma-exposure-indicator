@@ -195,7 +195,7 @@ def process_metrics(total_gex_per_asset: dict, path_to_store: str, mode: str):
             top_pos_idx = sorted(top_pos_idx, key=lambda i: pos_values[i], reverse=True)
             for i in top_pos_idx:
                 # Rounds to the closest 5 multiple
-                call = bars_pos[i].get_x()
+                call = round(bars_pos[i].get_x() / 5) * 5
                 top_calls.append(call)
                 bars_pos[i].set_color("darkblue")
         top_calls = ", ".join([str(call) for call in top_calls][1:])
@@ -210,7 +210,7 @@ def process_metrics(total_gex_per_asset: dict, path_to_store: str, mode: str):
             top_neg_idx = sorted(top_neg_idx, key=lambda i: neg_values[i], reverse=False)
             for i in top_neg_idx:
                 # Rounds to the closest 5 multiple
-                put = bars_neg[i].get_x()
+                put = round(bars_neg[i].get_x() / 5) * 5
                 top_puts.append(put)
                 bars_neg[i].set_color("darkred")
         top_puts = ", ".join([str(put) for put in top_puts][1:])
