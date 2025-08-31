@@ -173,12 +173,14 @@ def process_metrics(total_gex_per_asset: dict, path_to_store: str, mode: str):
         # Plot Flip Point if it exists
         if flip_point:
             flip_point = float(flip_point)
-            ax.axvline(x=flip_point, color="red", linestyle="--", linewidth=2, label=f"Gamma Flip ({flip_point:.2f})")
+            ax.axvline(
+                x=flip_point, color="yellow", linestyle="--", linewidth=2, label=f"Gamma Flip ({flip_point:.2f})"
+            )
             ax.text(
                 flip_point,
                 min(values_focus),
                 f"Gamma Flip ({flip_point:.2f})",
-                color="red",
+                color="yellow",
                 fontsize=6,
                 fontweight="bold",
                 ha="left",
@@ -251,6 +253,7 @@ def process_metrics(total_gex_per_asset: dict, path_to_store: str, mode: str):
 
         # Save the chart
         filename = os.path.join(path_to_store, f"gex_{asset_title.lower().replace(' ', '_')}.png")
+        gex_metrics[asset]["chart_image_path"] = filename
         fig.savefig(filename, dpi=150, bbox_inches="tight")
 
         # Show the charts into a webbrowser window

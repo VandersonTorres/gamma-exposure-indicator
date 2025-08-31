@@ -23,7 +23,7 @@ class GEXIndicatorManager:
         expiration_type: str,
         expiration_month: str,
         split_visualization: bool,
-        parse_only_zero_days: bool,
+        parse_only_zero_dte: bool,
         calc_flip_point: bool,
     ) -> None:
         """
@@ -34,14 +34,14 @@ class GEXIndicatorManager:
             expiration_type (str): Option expiration type filter (e.g., "monthly", "weekly", "all").
             expiration_month (str): Specific expiration month to filter (e.g., "Jan", "Feb", or "all").
             split_visualization (bool): Whether to generate separate visualizations for calls and puts.
-            parse_only_zero_days (bool): Whether to parse only zero-days-to-expiration options.
+            parse_only_zero_dte (bool): Whether to parse only zero-days-to-expiration options.
             calc_flip_point (bool): Whether to calculate the Gamma Flip point.
         """
         self.urls = urls or self.cboe_default_urls
         self.expiration_type = expiration_type or "all"
         self.expiration_month = expiration_month or "all"
         self.split_visualization = split_visualization or False
-        self.parse_only_zero_days = parse_only_zero_days or False
+        self.parse_only_zero_dte = parse_only_zero_dte or False
         self.calc_flip_point = calc_flip_point or False
 
     def get_data(self, headless: bool) -> list[tuple]:
@@ -83,7 +83,7 @@ class GEXIndicatorManager:
             processed_file = parse_cboe_csv(
                 file_path=file_path,
                 last_price=last_price,
-                parse_only_zero_days=self.parse_only_zero_days,
+                parse_only_zero_dte=self.parse_only_zero_dte,
                 calc_flip_point=self.calc_flip_point,
             )
             processed_files.append(processed_file)
@@ -141,7 +141,7 @@ class GEXIndicatorManager:
             gex_metrics (dict): Dictionary containing GEX metrics per asset.
 
         Side Effects:
-            Log the generated Pine Script to the console.
+            Log the generated Pine Script to the console and add it to the asset.
         """
         pine_script = ""
         for asset, metrics in gex_metrics.items():
@@ -177,7 +177,7 @@ class GEXIndicatorManager:
                 "// Draw top puts (blood red)\n"
                 "f_draw_levels(top_puts, color.rgb(161, 17, 94))\n"
             )
-        if pine_script:
+            gex_metrics[asset]["pine_script"] = pine_script
             logger.info(
                 "\n"
                 f"{'=' * 80}"
@@ -211,3 +211,4 @@ class GEXIndicatorManager:
             visualization_mode = "split"
         final_gex_metrics = process_metrics(gex_metrics_per_asset, REPORTS_DIR, visualization_mode)
         self.generate_pine_script(final_gex_metrics)
+        return final_gex_metrics
