@@ -3,6 +3,7 @@
 *.egg-info/
 build/
 *.pyc
+.env
 .venv/
 venv*
 env/*.env

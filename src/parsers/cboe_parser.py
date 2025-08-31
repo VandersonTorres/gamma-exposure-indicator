@@ -50,7 +50,7 @@ def calculate_gamma_exposure(gamma_value: float, open_interest: float, option_ty
 
 
 def calculate_gamma_flip(
-    df: pd.DataFrame, _metadata: list, last_price: float, parse_only_zero_days: bool, file_path: str
+    df: pd.DataFrame, _metadata: list, last_price: float, parse_only_zero_dte: bool, file_path: str
 ) -> int:
     """
     Calculate the Gamma Flip point for a given options DataFrame and save the result to a file.
@@ -65,7 +65,7 @@ def calculate_gamma_flip(
             'Expiration Date', 'Strike', 'IV', 'IV.1', 'Open Interest', 'Open Interest.1'.
         _metadata (list): Metadata list containing the file's date at index 2.
         last_price (float): Current spot price of the underlying asset.
-        parse_only_zero_days (bool): Consider only zero days to expiration.
+        parse_only_zero_dte (bool): Consider only zero days to expiration.
         file_path (str): Path of the (raw) file to be readed (csv)
 
     Returns:
@@ -82,7 +82,7 @@ def calculate_gamma_flip(
     today_date = datetime(year=parsed_date.year, month=parsed_date.month, day=parsed_date.day)
 
     df["Expiration Date"] = pd.to_datetime(df["Expiration Date"])
-    if parse_only_zero_days:
+    if parse_only_zero_dte:
         df = df[df["Expiration Date"].dt.date == today_date.date()]
 
     df["IsThirdFriday"] = [isThirdFriday(x) for x in df["Expiration Date"]]
@@ -155,7 +155,7 @@ def generate_leads(
     df: pd.DataFrame,
     _metadata: list,
     last_price: str,
-    parse_only_zero_days: bool,
+    parse_only_zero_dte: bool,
     calc_flip_point: bool,
     file_path: str,
 ) -> dict:
@@ -164,7 +164,7 @@ def generate_leads(
     Args:
         df (pd.DataFrame): A dataframe to be processed.
         last_price (str): Last price of the asset.
-        parse_only_zero_days (bool): If we will consider only 0DTE options
+        parse_only_zero_dte (bool): If we will consider only 0DTE options
         calc_flip_point (bool): If we will calculate Flip Gamma Point
         file_path (str): Path of the (raw) file to be readed (csv)
     Returns:
@@ -181,7 +181,7 @@ def generate_leads(
             continue
 
         expiration_date = row["Expiration Date"]
-        if parse_only_zero_days:
+        if parse_only_zero_dte:
             parsed_expiration = datetime.strptime(expiration_date, "%a %b %d %Y").date()
             if date.today() != parsed_expiration:
                 continue
@@ -223,7 +223,7 @@ def generate_leads(
     processed_strikes["last_price"] = last_price
 
     if calc_flip_point:
-        calculate_gamma_flip(df, _metadata, last_price, parse_only_zero_days, file_path)
+        calculate_gamma_flip(df, _metadata, last_price, parse_only_zero_dte, file_path)
 
     return processed_strikes
 
@@ -246,18 +246,18 @@ def save_processed_strikes(processed_strikes: dict, raw_file_path: str) -> str:
     return output_path
 
 
-def parse_cboe_csv(file_path: str, last_price: str, parse_only_zero_days: bool, calc_flip_point: bool) -> str:
+def parse_cboe_csv(file_path: str, last_price: str, parse_only_zero_dte: bool, calc_flip_point: bool) -> str:
     """
     Manage processing of Raw CSV File from CBOE.
     Args:
         file_path (str): Path to the CSV file from CBOE.
         last_price (str): Last price of the asset.
-        parse_only_zero_days (bool): If we will consider only 0DTE options
+        parse_only_zero_dte (bool): If we will consider only 0DTE options
         calc_flip_point (bool): If we will calculate Flip Gamma Point
     Returns:
         str: Processed file path.
     """
     df, _metadata = load_cboe_csv(file_path)
     logger.info(f"Calculating the leads for '{len(df)}' Strikes at '{file_path}'...")
-    processed_strikes = generate_leads(df, _metadata, last_price, parse_only_zero_days, calc_flip_point, file_path)
+    processed_strikes = generate_leads(df, _metadata, last_price, parse_only_zero_dte, calc_flip_point, file_path)
     return save_processed_strikes(processed_strikes, file_path)

@@ -53,10 +53,18 @@ $ playwright install
 $ pre-commit install
 ```
 
+6. Create a .env file and fill the environment variables you may need
+```bash
+cp ./src/env.sample ./src/.env
+```
+
 ---
 
 ## Usage
-You can run the downloader using the `app.py` passing (or not) the following arguments:
+
+**You can run the software via Telegram Bot by starting the Bot at [GEX Indicator Bot](http://t.me/GEXIndicatorBot)**
+
+**Or by terminal using the `app.py` passing (or not) the following arguments:**
 
 - URLs: Comma-separated URLs to crawl (url1,url2,url3). Default: `https://www.cboe.com/delayed_quotes/spx/quote_table`
 
@@ -72,7 +80,26 @@ You can run the downloader using the `app.py` passing (or not) the following arg
 1. all (default)
 2. janeiro, fevereiro, etc...
 
-### Usage Example
+### Telegram Bot Usage Guide
+
+1. Start NGROK:
+```bash
+$ ngrok http 5000
+```
+
+2. Copy the generated URL at the field "Forwarding" and paste it into your .env file (`WEBHOOK_DOMAIN`):
+![alt text](data/imagengrok.png)
+
+3. Start the webhook:
+```bash
+$ python run_webhook.py
+```
+
+4. Start the Telegram BOT [GEX Indicator Bot](http://t.me/GEXIndicatorBot)
+
+5. Once you do this process, you no longer need further actions in the terminal. All commands are made through the Telegram.
+
+### Terminal Usage Guide
 
 *Ensure you are inside `gamma-exposure-indicator` dir*
 ```bash
@@ -93,7 +120,7 @@ $ python app.py
 
 2. **Download only 0DTE options (Zero Days to Expiration):**
 ```bash
-$ python app.py --zero_days True
+$ python app.py --zero_dte True
 ```
 
 3. **Download all standard expiration options for SPX:**
