@@ -120,7 +120,7 @@ $ python app.py
 
 2. **Download only 0DTE options (Zero Days to Expiration):**
 ```bash
-$ python app.py --zero_dte True
+$ python app.py --zero_dte
 ```
 
 3. **Download all standard expiration options for SPX:**
@@ -135,12 +135,12 @@ $ python app.py --expiration_month agosto
 
 5. **Isolate the view of GEX results for both call and puts separatedly, on the charts:**
 ```bash
-$ python app.py --split_visualization True
+$ python app.py --split_visualization
 ```
 
 6. **Calculate Gamma Flip Point:**
 ```bash
-$ python app.py --flip_point True
+$ python app.py --flip_point
 ```
 - **Output**:
 
