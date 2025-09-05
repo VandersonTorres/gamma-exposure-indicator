@@ -1,0 +1,2511 @@
+{
+  "3200.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 40,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "3400.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 20,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "3600.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 31,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "3800.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 2,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "4000.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 36,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "4200.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 29,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "4400.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 1399,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "4600.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 4,
+      "put_open_interest": 728,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "4800.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 3,
+      "put_open_interest": 772,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5000.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 717,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5100.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 1138,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5200.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 20,
+      "put_open_interest": 2148,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5300.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 1,
+      "put_open_interest": 1867,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5375.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 294,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5400.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 523,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5425.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 102,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5450.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 253,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5475.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 338,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5500.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 129,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5525.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 138,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5550.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 68,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5575.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 448,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5600.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 1589,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5625.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 1197,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5650.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 2085,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5675.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 1054,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5700.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 1397,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5725.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 615,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5750.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 1134,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5775.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 2,
+      "put_open_interest": 452,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5800.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 1,
+      "put_open_interest": 961,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5825.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 489,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5850.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 2,
+      "put_open_interest": 622,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5875.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 220,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5900.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 1,
+      "put_open_interest": 1551,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5910.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 504,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5920.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 113,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5925.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 314,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5930.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 20,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5940.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 365,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5950.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 3,
+      "put_open_interest": 724,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5960.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 2,
+      "put_open_interest": 160,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5970.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 1,
+      "put_open_interest": 30,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5975.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 279,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5980.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 41,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "5990.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 91,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6000.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 6,
+      "put_open_interest": 1566,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6010.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 381,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6020.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 12,
+      "put_open_interest": 734,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6025.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 22,
+      "put_open_interest": 1935,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6030.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 14,
+      "put_open_interest": 102,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6035.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 38,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6040.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 157,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6045.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 7,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6050.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 1,
+      "put_open_interest": 1115,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6055.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 94,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6060.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 2,
+      "put_open_interest": 226,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6065.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 7,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6070.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 4,
+      "put_open_interest": 305,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6075.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 9,
+      "put_open_interest": 485,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6080.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 7,
+      "put_open_interest": 176,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6085.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 34,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6090.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 534,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6095.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 452,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6100.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 9,
+      "put_open_interest": 2785,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6105.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 115,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6110.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 2,
+      "put_open_interest": 179,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6115.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 168,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6120.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 3,
+      "put_open_interest": 321,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6125.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 6,
+      "put_open_interest": 653,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6130.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 1,
+      "put_open_interest": 215,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6135.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 161,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6140.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 6,
+      "put_open_interest": 4128,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6145.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 98,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6150.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 3,
+      "put_open_interest": 4020,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6155.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 207,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6160.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 1,
+      "put_open_interest": 245,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6165.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 183,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6170.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 66,
+      "put_open_interest": 350,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6175.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 11,
+      "put_open_interest": 869,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6180.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 11,
+      "put_open_interest": 689,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6185.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 3,
+      "put_open_interest": 183,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6190.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 1,
+      "put_open_interest": 2715,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6195.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 4,
+      "put_open_interest": 3255,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6200.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 18,
+      "put_open_interest": 3295,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6205.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 2,
+      "put_open_interest": 5709,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6210.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 31,
+      "put_open_interest": 3698,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6215.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 2,
+      "put_open_interest": 5453,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6220.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 2,
+      "put_open_interest": 879,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6225.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 8,
+      "put_open_interest": 2315,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6230.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 41,
+      "put_open_interest": 415,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6235.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 2,
+      "put_open_interest": 353,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6240.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 23,
+      "put_open_interest": 1286,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6245.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 224,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6250.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 16,
+      "put_open_interest": 1618,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6255.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 4,
+      "put_open_interest": 811,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6260.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 9,
+      "put_open_interest": 874,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6265.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -15760.105200000002,
+      "call_open_interest": 0,
+      "put_open_interest": 243,
+      "gamma_exposure_result": -15760.105200000002,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6270.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 453.9948,
+      "gex_at_put": -23088.8784,
+      "call_open_interest": 7,
+      "put_open_interest": 356,
+      "gamma_exposure_result": -22634.8836,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6275.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 1491.6972,
+      "gex_at_put": -167653.79400000002,
+      "call_open_interest": 23,
+      "put_open_interest": 2585,
+      "gamma_exposure_result": -166162.09680000003,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6280.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 2334.8304000000003,
+      "gex_at_put": -65634.6768,
+      "call_open_interest": 36,
+      "put_open_interest": 1012,
+      "gamma_exposure_result": -63299.8464,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6285.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 583.7076000000001,
+      "gex_at_put": -38784.1272,
+      "call_open_interest": 9,
+      "put_open_interest": 598,
+      "gamma_exposure_result": -38200.4196,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6290.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 453.9948,
+      "gex_at_put": -197033.74320000003,
+      "call_open_interest": 7,
+      "put_open_interest": 3038,
+      "gamma_exposure_result": -196579.74840000004,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6295.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 129.71280000000002,
+      "gex_at_put": -225959.69760000004,
+      "call_open_interest": 2,
+      "put_open_interest": 3484,
+      "gamma_exposure_result": -225829.98480000003,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6300.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 19132.638000000003,
+      "gex_at_put": -242627.79240000003,
+      "call_open_interest": 295,
+      "put_open_interest": 3741,
+      "gamma_exposure_result": -223495.15440000003,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6305.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 1037.7024000000001,
+      "gex_at_put": -405806.49480000004,
+      "call_open_interest": 16,
+      "put_open_interest": 6257,
+      "gamma_exposure_result": -404768.79240000003,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6310.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 1232.2716,
+      "gex_at_put": -264095.2608,
+      "call_open_interest": 19,
+      "put_open_interest": 4072,
+      "gamma_exposure_result": -262862.9892,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6315.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 1815.9792,
+      "gex_at_put": -400617.98280000006,
+      "call_open_interest": 28,
+      "put_open_interest": 6177,
+      "gamma_exposure_result": -398802.00360000005,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6320.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 3372.5328000000004,
+      "gex_at_put": -59473.3188,
+      "call_open_interest": 52,
+      "put_open_interest": 917,
+      "gamma_exposure_result": -56100.786,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6325.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 2723.9688000000006,
+      "gex_at_put": -198395.7276,
+      "call_open_interest": 42,
+      "put_open_interest": 3059,
+      "gamma_exposure_result": -195671.7588,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6330.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 10377.024000000001,
+      "gex_at_put": -131009.92800000003,
+      "call_open_interest": 160,
+      "put_open_interest": 2020,
+      "gamma_exposure_result": -120632.90400000002,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6335.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 2723.9688000000006,
+      "gex_at_put": -211172.4384,
+      "call_open_interest": 21,
+      "put_open_interest": 1628,
+      "gamma_exposure_result": -208448.4696,
+      "call_gamma_value": 0.0002,
+      "put_gamma_value": 0.0002
+    }
+  ],
+  "6340.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 10766.1624,
+      "gex_at_put": -437261.84880000004,
+      "call_open_interest": 83,
+      "put_open_interest": 3371,
+      "gamma_exposure_result": -426495.68640000006,
+      "call_gamma_value": 0.0002,
+      "put_gamma_value": 0.0002
+    }
+  ],
+  "6345.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 4410.235200000001,
+      "gex_at_put": -218695.7808,
+      "call_open_interest": 34,
+      "put_open_interest": 1686,
+      "gamma_exposure_result": -214285.5456,
+      "call_gamma_value": 0.0002,
+      "put_gamma_value": 0.0002
+    }
+  ],
+  "6350.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 46891.17719999999,
+      "gex_at_put": -720684.3168,
+      "call_open_interest": 241,
+      "put_open_interest": 3704,
+      "gamma_exposure_result": -673793.1396,
+      "call_gamma_value": 0.0003,
+      "put_gamma_value": 0.0003
+    }
+  ],
+  "6355.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 147288.88439999998,
+      "gex_at_put": -272591.4492,
+      "call_open_interest": 757,
+      "put_open_interest": 1401,
+      "gamma_exposure_result": -125302.5648,
+      "call_gamma_value": 0.0003,
+      "put_gamma_value": 0.0003
+    }
+  ],
+  "6360.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 48447.7308,
+      "gex_at_put": -544599.1908,
+      "call_open_interest": 249,
+      "put_open_interest": 2799,
+      "gamma_exposure_result": -496151.45999999996,
+      "call_gamma_value": 0.0003,
+      "put_gamma_value": 0.0003
+    }
+  ],
+  "6365.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 44167.2084,
+      "gex_at_put": -208189.04399999997,
+      "call_open_interest": 227,
+      "put_open_interest": 1070,
+      "gamma_exposure_result": -164021.83559999996,
+      "call_gamma_value": 0.0003,
+      "put_gamma_value": 0.0003
+    }
+  ],
+  "6370.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 38330.132399999995,
+      "gex_at_put": -386025.2928,
+      "call_open_interest": 197,
+      "put_open_interest": 1984,
+      "gamma_exposure_result": -347695.1604,
+      "call_gamma_value": 0.0003,
+      "put_gamma_value": 0.0003
+    }
+  ],
+  "6375.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 87945.27840000001,
+      "gex_at_put": -652455.384,
+      "call_open_interest": 339,
+      "put_open_interest": 2515,
+      "gamma_exposure_result": -564510.1055999999,
+      "call_gamma_value": 0.0004,
+      "put_gamma_value": 0.0004
+    }
+  ],
+  "6380.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 92874.36480000001,
+      "gex_at_put": -608871.8832,
+      "call_open_interest": 358,
+      "put_open_interest": 2347,
+      "gamma_exposure_result": -515997.51840000006,
+      "call_gamma_value": 0.0004,
+      "put_gamma_value": 0.0004
+    }
+  ],
+  "6385.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 51366.268800000005,
+      "gex_at_put": -272915.7312,
+      "call_open_interest": 198,
+      "put_open_interest": 1052,
+      "gamma_exposure_result": -221549.46239999996,
+      "call_gamma_value": 0.0004,
+      "put_gamma_value": 0.0004
+    }
+  ],
+  "6390.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 116352.3816,
+      "gex_at_put": -1044447.4656,
+      "call_open_interest": 299,
+      "put_open_interest": 2684,
+      "gamma_exposure_result": -928095.084,
+      "call_gamma_value": 0.0006,
+      "put_gamma_value": 0.0006
+    }
+  ],
+  "6395.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 151180.2684,
+      "gex_at_put": -688710.1116000001,
+      "call_open_interest": 333,
+      "put_open_interest": 1517,
+      "gamma_exposure_result": -537529.8432,
+      "call_gamma_value": 0.0007,
+      "put_gamma_value": 0.0007
+    }
+  ],
+  "6400.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 633322.746,
+      "gex_at_put": -2814767.7600000002,
+      "call_open_interest": 1395,
+      "put_open_interest": 6200,
+      "gamma_exposure_result": -2181445.0140000004,
+      "call_gamma_value": 0.0007,
+      "put_gamma_value": 0.0007
+    }
+  ],
+  "6405.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 157730.7648,
+      "gex_at_put": -1204772.4864000003,
+      "call_open_interest": 304,
+      "put_open_interest": 2322,
+      "gamma_exposure_result": -1047041.7216000003,
+      "call_gamma_value": 0.0008,
+      "put_gamma_value": 0.0008
+    }
+  ],
+  "6410.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 207216.198,
+      "gex_at_put": -7585280.262,
+      "call_open_interest": 355,
+      "put_open_interest": 12995,
+      "gamma_exposure_result": -7378064.064,
+      "call_gamma_value": 0.0009,
+      "put_gamma_value": 0.0009
+    }
+  ],
+  "6415.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 489406.39440000005,
+      "gex_at_put": -10171234.6428,
+      "call_open_interest": 686,
+      "put_open_interest": 14257,
+      "gamma_exposure_result": -9681828.248399999,
+      "call_gamma_value": 0.0011,
+      "put_gamma_value": 0.0011
+    }
+  ],
+  "6420.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 549722.8463999999,
+      "gex_at_put": -1214111.808,
+      "call_open_interest": 652,
+      "put_open_interest": 1440,
+      "gamma_exposure_result": -664388.9616,
+      "call_gamma_value": 0.0013,
+      "put_gamma_value": 0.0013
+    }
+  ],
+  "6425.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 1477753.0740000003,
+      "gex_at_put": -2093564.5920000002,
+      "call_open_interest": 1519,
+      "put_open_interest": 2152,
+      "gamma_exposure_result": -615811.5179999999,
+      "call_gamma_value": 0.0015,
+      "put_gamma_value": 0.0015
+    }
+  ],
+  "6430.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 1916247.1944,
+      "gex_at_put": -2138964.0719999997,
+      "call_open_interest": 1738,
+      "put_open_interest": 1940,
+      "gamma_exposure_result": -222716.87759999977,
+      "call_gamma_value": 0.0017,
+      "put_gamma_value": 0.0017
+    }
+  ],
+  "6435.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 1757867.8656000001,
+      "gex_at_put": -1756441.0248,
+      "call_open_interest": 1232,
+      "put_open_interest": 1231,
+      "gamma_exposure_result": 1426.8408000001218,
+      "call_gamma_value": 0.0022,
+      "put_gamma_value": 0.0022
+    }
+  ],
+  "6440.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 2188773.7872,
+      "gex_at_put": -2998181.6592,
+      "call_open_interest": 1298,
+      "put_open_interest": 1778,
+      "gamma_exposure_result": -809407.872,
+      "call_gamma_value": 0.0026,
+      "put_gamma_value": 0.0026
+    }
+  ],
+  "6445.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 2846547.396,
+      "gex_at_put": -2172365.1180000002,
+      "call_open_interest": 1330,
+      "put_open_interest": 1015,
+      "gamma_exposure_result": 674182.2779999999,
+      "call_gamma_value": 0.0033,
+      "put_gamma_value": 0.0033
+    }
+  ],
+  "6450.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 11956925.904,
+      "gex_at_put": -6477857.232,
+      "call_open_interest": 4609,
+      "put_open_interest": 2497,
+      "gamma_exposure_result": 5479068.671999999,
+      "call_gamma_value": 0.004,
+      "put_gamma_value": 0.004
+    }
+  ],
+  "6455.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 6650634.681600001,
+      "gex_at_put": -1571600.2848,
+      "call_open_interest": 1972,
+      "put_open_interest": 466,
+      "gamma_exposure_result": 5079034.3968,
+      "call_gamma_value": 0.0052,
+      "put_gamma_value": 0.0052
+    }
+  ],
+  "6460.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 9871468.362,
+      "gex_at_put": -2452479.9096,
+      "call_open_interest": 2085,
+      "put_open_interest": 518,
+      "gamma_exposure_result": 7418988.4524,
+      "call_gamma_value": 0.0073,
+      "put_gamma_value": 0.0073
+    }
+  ],
+  "6465.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 15228542.145600004,
+      "gex_at_put": -1190763.504,
+      "call_open_interest": 2302,
+      "put_open_interest": 180,
+      "gamma_exposure_result": 14037778.641600003,
+      "call_gamma_value": 0.0102,
+      "put_gamma_value": 0.0102
+    }
+  ],
+  "6470.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 20268403.2768,
+      "gex_at_put": -5185398.8928000005,
+      "call_open_interest": 2056,
+      "put_open_interest": 526,
+      "gamma_exposure_result": 15083004.384,
+      "call_gamma_value": 0.0152,
+      "put_gamma_value": 0.0152
+    }
+  ],
+  "6475.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 220202913.8232,
+      "gex_at_put": -13228954.4772,
+      "call_open_interest": 14698,
+      "put_open_interest": 883,
+      "gamma_exposure_result": 206973959.346,
+      "call_gamma_value": 0.0231,
+      "put_gamma_value": 0.0231
+    }
+  ],
+  "6480.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 300551821.5168,
+      "gex_at_put": -4467308.8319999995,
+      "call_open_interest": 13792,
+      "put_open_interest": 205,
+      "gamma_exposure_result": 296084512.68479997,
+      "call_gamma_value": 0.0336,
+      "put_gamma_value": 0.0336
+    }
+  ],
+  "6485.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 83318033.6856,
+      "gex_at_put": -3396853.95,
+      "call_open_interest": 3066,
+      "put_open_interest": 125,
+      "gamma_exposure_result": 79921179.7356,
+      "call_gamma_value": 0.0419,
+      "put_gamma_value": 0.0419
+    }
+  ],
+  "6490.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 71638109.46600002,
+      "gex_at_put": -17678557.512,
+      "call_open_interest": 2869,
+      "put_open_interest": 708,
+      "gamma_exposure_result": 53959551.954000026,
+      "call_gamma_value": 0.0385,
+      "put_gamma_value": 0.0385
+    }
+  ],
+  "6495.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 49489065.1584,
+      "gex_at_put": -2304477.6048,
+      "call_open_interest": 3028,
+      "put_open_interest": 141,
+      "gamma_exposure_result": 47184587.5536,
+      "call_gamma_value": 0.0252,
+      "put_gamma_value": 0.0252
+    }
+  ],
+  "6500.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 34673009.716800004,
+      "gex_at_put": -3826787.0256000008,
+      "call_open_interest": 3588,
+      "put_open_interest": 396,
+      "gamma_exposure_result": 30846222.691200003,
+      "call_gamma_value": 0.0149,
+      "put_gamma_value": 0.0149
+    }
+  ],
+  "6505.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 39201802.416,
+      "gex_at_put": -910583.8559999999,
+      "call_open_interest": 6716,
+      "put_open_interest": 156,
+      "gamma_exposure_result": 38291218.56,
+      "call_gamma_value": 0.009,
+      "put_gamma_value": 0.009
+    }
+  ],
+  "6510.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 24973345.9584,
+      "gex_at_put": -345036.048,
+      "call_open_interest": 6876,
+      "put_open_interest": 95,
+      "gamma_exposure_result": 24628309.9104,
+      "call_gamma_value": 0.0056,
+      "put_gamma_value": 0.0056
+    }
+  ],
+  "6515.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 6644732.7492,
+      "gex_at_put": -86388.72480000001,
+      "call_open_interest": 2769,
+      "put_open_interest": 36,
+      "gamma_exposure_result": 6558344.0244,
+      "call_gamma_value": 0.0037,
+      "put_gamma_value": 0.0037
+    }
+  ],
+  "6520.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 1888358.9423999998,
+      "gex_at_put": -80875.9308,
+      "call_open_interest": 1004,
+      "put_open_interest": 43,
+      "gamma_exposure_result": 1807483.0115999999,
+      "call_gamma_value": 0.0029,
+      "put_gamma_value": 0.0029
+    }
+  ],
+  "6525.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 2206414.728,
+      "gex_at_put": -45529.1928,
+      "call_open_interest": 1890,
+      "put_open_interest": 39,
+      "gamma_exposure_result": 2160885.5352000003,
+      "call_gamma_value": 0.0018,
+      "put_gamma_value": 0.0018
+    }
+  ],
+  "6530.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 711150.4260000001,
+      "gex_at_put": -31131.072,
+      "call_open_interest": 731,
+      "put_open_interest": 32,
+      "gamma_exposure_result": 680019.354,
+      "call_gamma_value": 0.0015,
+      "put_gamma_value": 0.0015
+    }
+  ],
+  "6535.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 478056.5244,
+      "gex_at_put": -4993.942800000001,
+      "call_open_interest": 1053,
+      "put_open_interest": 11,
+      "gamma_exposure_result": 473062.5816,
+      "call_gamma_value": 0.0007,
+      "put_gamma_value": 0.0007
+    }
+  ],
+  "6540.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 393029.78400000004,
+      "gex_at_put": -4669.6608,
+      "call_open_interest": 1010,
+      "put_open_interest": 12,
+      "gamma_exposure_result": 388360.12320000003,
+      "call_gamma_value": 0.0006,
+      "put_gamma_value": 0.0006
+    }
+  ],
+  "6545.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 326876.256,
+      "gex_at_put": -7134.204,
+      "call_open_interest": 1008,
+      "put_open_interest": 22,
+      "gamma_exposure_result": 319742.05199999997,
+      "call_gamma_value": 0.0005,
+      "put_gamma_value": 0.0005
+    }
+  ],
+  "6550.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 1430213.3328000002,
+      "gex_at_put": -3113.1072000000004,
+      "call_open_interest": 5513,
+      "put_open_interest": 12,
+      "gamma_exposure_result": 1427100.2256000002,
+      "call_gamma_value": 0.0004,
+      "put_gamma_value": 0.0004
+    }
+  ],
+  "6555.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 246973.17120000004,
+      "gex_at_put": -1297.1280000000002,
+      "call_open_interest": 952,
+      "put_open_interest": 5,
+      "gamma_exposure_result": 245676.04320000004,
+      "call_gamma_value": 0.0004,
+      "put_gamma_value": 0.0004
+    }
+  ],
+  "6560.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 195088.05120000002,
+      "gex_at_put": -4410.235200000001,
+      "call_open_interest": 752,
+      "put_open_interest": 17,
+      "gamma_exposure_result": 190677.81600000002,
+      "call_gamma_value": 0.0004,
+      "put_gamma_value": 0.0004
+    }
+  ],
+  "6565.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 271618.6032,
+      "gex_at_put": -194.5692,
+      "call_open_interest": 1396,
+      "put_open_interest": 1,
+      "gamma_exposure_result": 271424.034,
+      "call_gamma_value": 0.0003,
+      "put_gamma_value": 0.0003
+    }
+  ],
+  "6570.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 172582.8804,
+      "gex_at_put": -4669.6608,
+      "call_open_interest": 887,
+      "put_open_interest": 24,
+      "gamma_exposure_result": 167913.21959999998,
+      "call_gamma_value": 0.0003,
+      "put_gamma_value": 0.0003
+    }
+  ],
+  "6575.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 2116134.6192,
+      "gex_at_put": -2529.3995999999997,
+      "call_open_interest": 10876,
+      "put_open_interest": 13,
+      "gamma_exposure_result": 2113605.2196,
+      "call_gamma_value": 0.0003,
+      "put_gamma_value": 0.0003
+    }
+  ],
+  "6580.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 81200.21280000001,
+      "gex_at_put": -1556.5536000000002,
+      "call_open_interest": 626,
+      "put_open_interest": 12,
+      "gamma_exposure_result": 79643.65920000001,
+      "call_gamma_value": 0.0002,
+      "put_gamma_value": 0.0002
+    }
+  ],
+  "6585.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 100786.84560000002,
+      "gex_at_put": -518.8512000000001,
+      "call_open_interest": 777,
+      "put_open_interest": 4,
+      "gamma_exposure_result": 100267.99440000001,
+      "call_gamma_value": 0.0002,
+      "put_gamma_value": 0.0002
+    }
+  ],
+  "6590.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 64986.11280000001,
+      "gex_at_put": -2205.1176000000005,
+      "call_open_interest": 501,
+      "put_open_interest": 17,
+      "gamma_exposure_result": 62780.99520000001,
+      "call_gamma_value": 0.0002,
+      "put_gamma_value": 0.0002
+    }
+  ],
+  "6595.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 73676.87040000001,
+      "gex_at_put": -1556.5536000000002,
+      "call_open_interest": 568,
+      "put_open_interest": 12,
+      "gamma_exposure_result": 72120.31680000002,
+      "call_gamma_value": 0.0002,
+      "put_gamma_value": 0.0002
+    }
+  ],
+  "6600.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 258906.74880000003,
+      "gex_at_put": -648.5640000000001,
+      "call_open_interest": 1996,
+      "put_open_interest": 5,
+      "gamma_exposure_result": 258258.18480000002,
+      "call_gamma_value": 0.0002,
+      "put_gamma_value": 0.0002
+    }
+  ],
+  "6605.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 42026.9472,
+      "gex_at_put": -0.0,
+      "call_open_interest": 324,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 42026.9472,
+      "call_gamma_value": 0.0002,
+      "put_gamma_value": 0.0002
+    }
+  ],
+  "6610.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 47345.172000000006,
+      "gex_at_put": -0.0,
+      "call_open_interest": 730,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 47345.172000000006,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6615.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 1491.6972,
+      "gex_at_put": -0.0,
+      "call_open_interest": 23,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 1491.6972,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6620.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 51301.4124,
+      "gex_at_put": -0.0,
+      "call_open_interest": 791,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 51301.4124,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6625.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 31001.359200000003,
+      "gex_at_put": -194.56920000000002,
+      "call_open_interest": 478,
+      "put_open_interest": 3,
+      "gamma_exposure_result": 30806.79,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6630.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 40275.824400000005,
+      "gex_at_put": -194.56920000000002,
+      "call_open_interest": 621,
+      "put_open_interest": 3,
+      "gamma_exposure_result": 40081.25520000001,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6635.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 4604.804400000001,
+      "gex_at_put": -0.0,
+      "call_open_interest": 71,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 4604.804400000001,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6640.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 34698.174000000006,
+      "gex_at_put": -0.0,
+      "call_open_interest": 535,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 34698.174000000006,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6645.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 2399.6868,
+      "gex_at_put": -0.0,
+      "call_open_interest": 37,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 2399.6868,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6650.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 62716.138800000015,
+      "gex_at_put": -259.42560000000003,
+      "call_open_interest": 967,
+      "put_open_interest": 4,
+      "gamma_exposure_result": 62456.71320000001,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6655.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 1556.5536000000002,
+      "gex_at_put": -0.0,
+      "call_open_interest": 24,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 1556.5536000000002,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6660.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 13036.1364,
+      "gex_at_put": -0.0,
+      "call_open_interest": 201,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 13036.1364,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6665.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 2205.1176000000005,
+      "gex_at_put": -0.0,
+      "call_open_interest": 34,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 2205.1176000000005,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6670.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 3177.9636,
+      "gex_at_put": -0.0,
+      "call_open_interest": 49,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 3177.9636,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6675.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 31974.205200000004,
+      "gex_at_put": -129.71280000000002,
+      "call_open_interest": 493,
+      "put_open_interest": 2,
+      "gamma_exposure_result": 31844.492400000003,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6680.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 843.1332000000001,
+      "gex_at_put": -0.0,
+      "call_open_interest": 13,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 843.1332000000001,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6685.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6690.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6695.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 64.85640000000001,
+      "gex_at_put": -64.85640000000001,
+      "call_open_interest": 1,
+      "put_open_interest": 1,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6700.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 21532.3248,
+      "gex_at_put": -518.8512000000001,
+      "call_open_interest": 332,
+      "put_open_interest": 8,
+      "gamma_exposure_result": 21013.473599999998,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6710.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 324.28200000000004,
+      "gex_at_put": -0.0,
+      "call_open_interest": 5,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 324.28200000000004,
+      "call_gamma_value": 0.0001,
+      "put_gamma_value": 0.0001
+    }
+  ],
+  "6720.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6725.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 162,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6730.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 6,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6740.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6750.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 65,
+      "put_open_interest": 2,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6760.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 1,
+      "put_open_interest": 29,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6775.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 23,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6800.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 321,
+      "put_open_interest": 1,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6825.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 14,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6850.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6875.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 12,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6900.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 538,
+      "put_open_interest": 1,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6925.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "6950.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "7000.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 71,
+      "put_open_interest": 1,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "7100.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 2,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "7200.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 3,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "7400.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 1,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "7600.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 7,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "7800.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 1,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "8000.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "8200.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 0,
+      "put_open_interest": 0,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "8400.0": [
+    {
+      "expiration_date": "Thu Sep 04 2025",
+      "gex_at_call": 0.0,
+      "gex_at_put": -0.0,
+      "call_open_interest": 1,
+      "put_open_interest": 3,
+      "gamma_exposure_result": 0.0,
+      "call_gamma_value": 0.0,
+      "put_gamma_value": 0.0
+    }
+  ],
+  "last_price": 6485.64
+}

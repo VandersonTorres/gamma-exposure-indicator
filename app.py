@@ -73,7 +73,7 @@ if __name__ == "__main__":
         parse_only_zero_dte=args.get("zero_dte"),
         calc_flip_point=args.get("calc_flip_point"),
     )
-    gex_metrics = app_manager.run(headless=True)
+    gex_metrics = app_manager.run(headless=True, telegram_chat_id=args.get("telegram_chat_id"))
 
     # If in Telegram Mode...
     if chat_id := args.get("telegram_chat_id"):

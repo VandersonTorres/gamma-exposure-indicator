@@ -189,7 +189,7 @@ class GEXIndicatorManager:
                 f"{'=' * 80}\n"
             )
 
-    def run(self, headless: bool = True) -> None:
+    def run(self, headless: bool = True, telegram_chat_id: str = "") -> None:
         """
         Execute the full GEX indicator workflow.
 
@@ -209,6 +209,6 @@ class GEXIndicatorManager:
         visualization_mode = "total"
         if self.split_visualization:
             visualization_mode = "split"
-        final_gex_metrics = process_metrics(gex_metrics_per_asset, REPORTS_DIR, visualization_mode)
+        final_gex_metrics = process_metrics(gex_metrics_per_asset, REPORTS_DIR, visualization_mode, telegram_chat_id)
         self.generate_pine_script(final_gex_metrics)
         return final_gex_metrics

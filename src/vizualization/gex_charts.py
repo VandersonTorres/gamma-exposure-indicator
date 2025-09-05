@@ -5,7 +5,7 @@ import webbrowser
 from copy import deepcopy
 
 
-def process_metrics(total_gex_per_asset: dict, path_to_store: str, mode: str):
+def process_metrics(total_gex_per_asset: dict, path_to_store: str, mode: str, telegram_chat_id: str):
     """
     Plot Gamma Exposure focused on most relevant strikes.
 
@@ -257,7 +257,8 @@ def process_metrics(total_gex_per_asset: dict, path_to_store: str, mode: str):
         fig.savefig(filename, dpi=150, bbox_inches="tight")
 
         # Show the charts into a webbrowser window
-        webbrowser.open("file://" + os.path.abspath(filename))
+        if not telegram_chat_id:
+            webbrowser.open("file://" + os.path.abspath(filename))
 
         # Close the fig
         plt.close(fig)
