@@ -95,7 +95,7 @@ $ ngrok http 5000
 $ python run_webhook.py
 ```
 
-4. Start the Telegram BOT [GEX Indicator Bot](http://t.me/GEXIndicatorBot)
+4. Start the Telegram BOT [GEX Indicator Bot](t.me/GEXLevelsIndicatorBot)
 
 5. Once you do this process, you no longer need further actions in the terminal. All commands are made through the Telegram.
 

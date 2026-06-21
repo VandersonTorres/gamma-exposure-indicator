@@ -93,6 +93,7 @@ class CBOEDownloader(BaseDownloader):
             File Path (str)
         """
         with self.start_navigation(url=url, headless=headless) as page:
+            page: Page = page
             self.resolve_cookies_popup(page=page, resolve_cookies_selector="#onetrust-accept-btn-handler")
             self._sleep_between_actions(seconds=3)
             last_price = page.query_selector(
@@ -105,10 +106,10 @@ class CBOEDownloader(BaseDownloader):
                 self.logger.info(f"Retrying to set up expiration modules due to: {err}")
                 self.setup_expiration(page=page, _type=expiration_type, _month=expiration_month)
 
-            with page.expect_download(timeout=60000) as download_info:
+            with page.expect_download(timeout=120000) as download_info:
                 page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-                csv_link = page.locator("//a[contains(., 'Download CSV')]")
-                csv_link.wait_for(state="visible", timeout=3000)
+                csv_link = page.locator(selector="//a[contains(., 'Download CSV')]")
+                csv_link.wait_for(state="visible", timeout=120000)
                 csv_link.click()
 
             download = download_info.value

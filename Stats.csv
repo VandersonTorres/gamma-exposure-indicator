@@ -1,0 +1,32 @@
+DATA DA ENTRADA (DD-MM-YY HH:MM),DIRECIONAL (Comprado ou Vendido),NIVEL DO GEX (1 2 ou 3),VALOR DA ⁠EXPOSIÇÃO (0.5 - 1.0),TIPO DA OP (Compressão ou Expansão),VENCIMENTO (0DTE ou Todos),RESULTADO,OBSERVAÇÃO,FINANCEIRO
+02-09-25 08:45,Vendido,2,0.25,Expansão,Todos Vencinmentos,Gain,Mercado acelerou no gamma flip chegou em um nivel de PUT trabalhou abaixo e quando voltou pra defender eu vendi a favor da tendencia.,25
+02-09-25 12:50,Vendido,3,1.5,Expansão,0DTE,Loss,Mercado em tendencia caindo bastante e no fundo tinha um nivel de put. fiz a entrada logo quando o preço chegou.,-25
+03-09-25 08:05,Vendido,2,0.25,Compressão,0DTE,Gain,Mercado recuperou o gamma flip e foi subindo em abaulamento demonstrando exaustão do movimento incusive com 3 toques.,25
+03-09-25 09:40,Vendido,1,7.5,Compressão,0DTE,Gain,Mercado travado depois da operação anterior batendo entre dois niveis de gamma.,25
+03-09-25 11:40,Vendido,2,0.35,Compressão,0DTE,Gain,Mercado agarrado mas parecendo abrir spread.,25
+03-09-25 14:05,Vendido,Call Wall,1.4,Compressão,0DTE,Loss,Só violou o stop voltou e deu gain.,-25
+04-09-25 09:45,Vendido,3,0.20,Compressão,0DTE,Gain,Gain só de 3.5 pontos porque coincidiu com hora de abertura do mercado americano e tive que sair.,17.5
+04-09-25 11:30,Vendido,Call Wall,1.5,Compressão,0DTE,Loss,Foi só violar o stop e voltou.,-25
+04-09-25 12:00,Vendido,1,0.9,Compressão,0DTE,Gain,Era no ponto do stop da operação anterior.,25
+04-09-25 12:25,Vendido,3,0.25,Compressão,0DTE,Gain,Mercado continuou subindo devagar.,25
+05-09-25 09:55,Vendido,Call Wall,3.15,Compressão,0DTE,Loss,Mercado subindo forte após payroll.,-25
+05-09-25 10:05,Vendido,1,3,Compressão,0DTE,Gain,Mesmo ponto do stop anterior. Estopou e já vendeu.2,25
+05-09-25 12:10,Comprado,Put Wall,3.0,Compressão,Todos Vencimentos,Gain,Mercado derramando passou do flip point no 0DTE e continuou caindo até a put Wall.,25
+05-09-25 12:35,Vendido,3,0.2,Compressão,0DTE,Gain,Mercado recuperando depois da queda forte e eu vendi no nivel 3 de call acima do flip point.,25
+08-09-25 09:25,Vendido,1,3.15,Compressão,0DTE,Loss,Mercado tava acima do nível e caiu forte. quando voltou pra testar eu vendi mas estopou. se tivesse comprado dava bom.,-25
+08-09-25 11:35,Vendido,3,1.8,Compressão,0DTE,Loss,Mercado foi subindo e fez front running 0.25 pontos antes de pegar a ordem e teria pago. mas entrei no candle seguinte e estopou.,-25
+08-09-25 15:15,Vendido,1,4.5,Compressão,0DTE,Gain,Mercado lateralizado trabalhando acima do MIDAS.,25
+09-09-25 09:10,Vendido,2,2.1,Compressão,0DTE,Gain,Mercado lateralizado.,25
+09-09-25 10:45,Vendido,1,2.15,Compressão,0DTE,Gain,Mercado lateralizado após abertura do mercado americano.,25
+09-09-25 11:10,Vendido,3,2.05,Compressão,0DTE,Gain,Mercado lateralizado subindo e absorvendo.,25
+09-09-25 11:50,Vendido,Call Wall,2.5,Compressão,0DTE,Gain,Mercado caindo até o MIDAS.,25
+10-09-25 10:45,Vendido,3,2.5,Compressão,0DTE,Gain,Mercado em tendencia de alta.,25
+10-09-25 11:15,Vendido,1,6.0,Compressão,0DTE,Gain,Mercado no meio de uma retração.,25
+10-09-25 16:30,Vendido,Call Wall,1.6,Compressão,0DTE,Gain,Mercado em tendencia de baixa.,25
+11-09-25 11:05,Vendido,Call Wall,3.0,Compressão,0DTE,Loss,Mercado em tendencia de alta forte na pernada.,-25
+11-09-25 11:30,Vendido,1,2.6,Compressão,0DTE,Loss,Entrada no stop da operação anterior. tendencia.,-25
+11-09-25 11:35,Vendido,2,2.5,Compressão,0DTE,Gain,Entrada no stop da operação anterior. tendencia.,25
+11-09-25 12:00,Vendido,2,2.5,Compressão,0DTE,Loss,Segundo toque na entrada da operação anterior. tendencia.,-25
+12-09-25 13:30,Vendido,3,0.3,Compressão,0DTE,Gain,Mercado agarrado.,25
+12-09-25 15:30,Vendido,Call Wall,1.6,Compressão,0DTE,Loss,Mercado subindo travado.,-25
+12-09-25 13:50,Vendido,3,0.4,Compressão,0DTE,Gain,Entrada no stop da última operação.,25

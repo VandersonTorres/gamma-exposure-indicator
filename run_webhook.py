@@ -84,9 +84,7 @@ async def webhook():
             cmd = ["python", "app.py", "--telegram_chat_id", str(chat_id)]
             threading.Thread(target=run_and_notify, args=(cmd,)).start()
 
-            await telegram_bot._send_telegram_message(
-                message=msg_to_send.format(args=" ".join(received_msg)), chat_id=chat_id
-            )
+            await telegram_bot._send_telegram_message(message=msg_to_send.format(args=received_msg), chat_id=chat_id)
         elif "--" in received_msg and "--all" not in received_msg:
             args = shlex.split(received_msg)
             cmd = ["python", "app.py", "--telegram_chat_id", str(chat_id)] + args
